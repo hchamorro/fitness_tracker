@@ -21,13 +21,41 @@
     <script src="/assets/js/burger.js"></script>
   </head>
   <body>
-    <header class="text-center shadow-light">Fitness Tracker Name</header>
-    <div class="frow-container">
-      <div class="navigation-bar">
-        <div>Sign In</div>
-        <div>Create Account</div>
+    <header class="text-center shadow-light">
+      <div class="frow row-between">
+        <div class="logo">Fitness Tracker Name</div>
+        <div class="navigation">
+          <div>Sign In</div>
+          <div>Create Account</div>
+        </div>
       </div>
-      <div class="content">content here</div>
+    </header>
+    <div class="frow-container user-form">
+      <label id="first-name">
+        First Name
+        <input />
+      </label>
+      <label id="first-name">
+        Last Name
+        <input />
+      </label>
+      DOB
+      <input type="date" value="2017-06-01" />
+      <label>
+        Gender
+        <select>
+          <optgroup label="Gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Prefer not to say</option>
+          </optgroup>
+        </select>
+      </label>
+      <label id="pay-source">
+        Venmo
+        <input />
+        Add a profile picture
+        <input type="file"/>
     </div>
   </body>
 </html>

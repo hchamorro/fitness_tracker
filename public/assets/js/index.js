@@ -3,7 +3,7 @@ $(() => {
   $("#submit-form").on("click", event => {
     event.preventDefault();
 
-    let myDate = new Date($("#date-age").val());
+    let myDate = $("#date-age").val();
     console.log(myDate);
 
     let newUser = {

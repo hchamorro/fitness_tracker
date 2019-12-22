@@ -11,51 +11,65 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/frow@3/dist/frow.min.css"
     />
     <title>Fitness Tracker!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/burger.js"></script>
+    <script src="../public/assets/js/index.js"></script>
   </head>
   <body>
     <header class="text-center shadow-light">
       <div class="frow row-between">
         <div class="logo">Fitness Tracker Name</div>
-        <div class="navigation">
+        <!-- hidden during form page since user does not have an account? -->
+        <!-- <div class="navigation">
           <div>Sign In</div>
           <div>Create Account</div>
-        </div>
+        </div> -->
       </div>
     </header>
     <div class="frow-container user-form">
-      <label id="first-name">
-        First Name
-        <input />
-      </label>
-      <label id="first-name">
-        Last Name
-        <input />
-      </label>
-      DOB
-      <input type="date" value="2017-06-01" />
-      <label>
-        Gender
-        <select>
-          <optgroup label="Gender">
-            <option>Male</option>
-            <option>Female</option>
-            <option>Prefer not to say</option>
-          </optgroup>
-        </select>
-      </label>
-      <label id="pay-source">
-        Venmo
-        <input />
-        Add a profile picture
-        <input type="file"/>
+      <form>
+        <label>
+          First Name
+          <textarea id="first-name" class="my-custom-textarea"></textarea>
+        </label>
+        <label>
+          Last Name
+          <textarea id="last-name" class="my-custom-textarea"></textarea>
+        </label>
+        <label>
+          DOB
+          <input id="date-age" type="date" class="input-date" value="" />
+        </label>
+        <label>
+          Gender
+          <select id="gender">
+            <optgroup label="Gender">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to say</option>
+            </optgroup>
+          </select>
+        </label>
+        <label>
+          Venmo
+          <textarea id="pay-source" class="my-custom-textarea"></textarea>
+        </label>
+        <label>
+          Add a profile picture
+          <input type="file" />
+        </label>
+        <button
+          id="submit-form"
+          class="my-custom-button items-center"
+          type="button"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   </body>
 </html>

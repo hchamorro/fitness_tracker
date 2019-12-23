@@ -1,18 +1,38 @@
 header {
   height: 70px;
   padding: 0 25px;
-  background-color: blue;
-  color: red;
+  background-color: whitesmoke ;
+  color: black;
+  font-weight: 100;
+}
+
+.color-block{
+  width: 200px;
+  height: 20px;
+  background-color: #D3C02F;
+  position: absolute;
+  left: 15px;
+  margin-top: 18px;
+}
+
+body{
+  background-color: white ;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 35px;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 3px;
+  margin-top: 15px;
+  z-index: 100;
 }
 
 .navigation {
   font-size: 20px;
   font-weight: 500;
+  font-family: 'Roboto', sans-serif;
 }
 
 .user-form {
@@ -24,6 +44,7 @@ header {
   border-radius: 3px;
   background-color: WhiteSmoke;
   box-shadow: inset 0 0 7px #aaa;
+  font-family: 'Roboto', sans-serif;
 }
 
 .input-date {
@@ -34,4 +55,10 @@ button.my-custom-button {
   background: none;
   border: 2px solid lightseagreen;
   color: lightseagreen;
+  font-family: 'Roboto', sans-serif;
 }
+
+
+/* #C5D2EF lavender*/
+/* #D3C02F- yellow */
+/* #F2F1F0 gray */

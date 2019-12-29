@@ -1,0 +1,17 @@
+
+
+.color-block {
+  width: 200px;
+  height: 20px;
+  background-color: #d3c02f;
+  position: absolute;
+  margin-top: 18px;
+}
+
+.my-custom-textarea {
+  padding: 15px;
+}
+
+.user-inputs {
+  margin: 0;
+}

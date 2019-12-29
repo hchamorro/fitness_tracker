@@ -14,6 +14,13 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
+    },
     birthDate: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -37,23 +44,24 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DECIMAL(5, 2),
       allowNull: false
     },
-    venmo:{
-        type: DataTypes.STRING,
+    venmo: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
+      }
     }
   });
-};
-  PersonalInfo.associate = (models) => {
-    // We're saying that a PersonalInfo should belong to an Author
-    // A PersonalInfo can't be created without an Author due to the foreign key constraint
+
+  PersonalInfo.associate = models => {
+    // We're saying that a PersonalInfo should belong to user
+    // A PersonalInfo can't be created without an user due to the foreign key constraint
     PersonalInfo.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
- 
+  };
 
   return PersonalInfo;
 };

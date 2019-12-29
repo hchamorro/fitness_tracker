@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <link
       rel="stylesheet"
-      href="../public/assets/css/style.css"
+      href="../public/assets/css/global.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/assets/css/form.css"
       type="text/css"
     />
     <meta
@@ -13,8 +18,12 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/frow@3/dist/frow.min.css"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">    
+      href="https://cdn.jsdelivr.net/npm/frow@3/dist/frow.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap"
+      rel="stylesheet"
+    />
     <title>Fitness Tracker!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="../public/assets/js/index.js"></script>
@@ -31,21 +40,21 @@
         </div> -->
       </div>
     </header>
-    <div class="frow-container user-form">
+    <div class="frow-container user-form user-inputs">
       <form>
-        <label class="user-inputs">
+        <label>
           First Name
           <textarea id="first-name" class="my-custom-textarea"></textarea>
         </label>
-        <label class="user-inputs"> 
+        <label>
           Last Name
           <textarea id="last-name" class="my-custom-textarea"></textarea>
         </label>
-        <label class="user-inputs">
+        <label>
           DOB
           <input id="date-age" type="date" class="input-date" value="" />
         </label>
-        <label class="user-inputs">
+        <label>
           Gender
           <select id="gender">
             <optgroup label="Gender">
@@ -55,11 +64,11 @@
             </optgroup>
           </select>
         </label>
-        <label class="user-inputs">
+        <label class="">
           Venmo
           <textarea id="pay-source" class="my-custom-textarea"></textarea>
         </label>
-        <label class="user-inputs">
+        <label class="">
           Add a profile picture
           <input type="file" />
         </label>

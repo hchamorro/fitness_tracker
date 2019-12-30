@@ -29,17 +29,62 @@
     <script src="../public/assets/js/landing.js"></script>
   </head>
   <body>
-    <header class="text-center">
-      <div class="frow">
-        <div class="logo">FitBOARD</div>
+    <header class="frow justify-between">
+      <div>
+        <div class="logo p-5">FitBOARD</div>
         <span class="color-block"></span>
-        <!-- hidden during form page since user does not have an account? -->
+      </div>
+      <div class="frow centered visible-md visible-lg">
+        <a class="p-5 ml-30">
+          About
+        </a>
+        <a class="ml-30">
+          Account
+        </a>
+        <a class="p-5 ml-30">
+          Sign Up
+        </a>
+      </div>
+      <div id="mobile-hamburger-closed">
+        <button
+          id="mobile-hamburger-menu"
+          class="visible-xs"
+          type="button"
+          onclick="hamburgerDisplyLink()"
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+      <div
+        id="mobile-hamburger-displayed"
+        class="fow column-center small-nav nowrap"
+        hidden
+      >
+        <ul class="frow centered-column">
+          <li>
+            <a>About</a>
+          </li>
+          <li>
+            <a>Account</a>
+          </li>
+          <li>
+            <a>Sign Up</a>
+          </li>
+        </ul>
       </div>
     </header>
     <main class="frow-container mt-20">
-      <div class="frow">
+      <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
+      <h3 class="frow">
         Intro to our product FitBOARD
-      </div>
+      </h3>
+      <h4 class="frow mt-10">
+        Facts about fitness fitBoard random info reagarding stuff
+      </h4>
+      <!-- see above message for details  -->
+
       <div class="frow nowrap mt-20">
         <label
           class="col-md-5-6 col-xs-4-5 user-form user-inputs my-custom-textarea mx-5"
@@ -48,14 +93,11 @@
             id="user-email"
             type="text"
             placeholder="Enter Your Email Address"
-            class="height-100"
           />
         </label>
         <button class="col-md-1-6 col-xs-1-5 mx-5">Git Fit</button>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </main>
   </body>
 </html>

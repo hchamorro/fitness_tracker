@@ -7,7 +7,9 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 300]
       }
     },
-    image: {}
+    image: {
+      type: DataTypes.STRING
+    }
   });
 
   Post.associate = function(models) {

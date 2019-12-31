@@ -30,11 +30,11 @@ module.exports = (sequelize, DataTypes) => {
   Group.associate = models => {
     // We're saying that a Group should belong to user
     // A Group can't be created without an user due to the foreign key constraint
-    Group.hasMany(models.Posts, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // Group.hasMany(models.Posts, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
   };
 
   return Group;

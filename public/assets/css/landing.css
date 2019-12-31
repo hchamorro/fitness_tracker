@@ -6,6 +6,10 @@
   margin-top: 18px;
 }
 
+.nav a {
+  margin-left: 25px;
+}
+
 .my-custom-textarea {
   padding: 15px;
 }
@@ -14,7 +18,8 @@
   margin: 0;
 }
 
-#mobile-hamburger-closed div {
+#mobile-hamburger-menu div,
+#collaps-hamburger-menu div {
   width: 22px;
   height: 4px;
   background-color: #777;

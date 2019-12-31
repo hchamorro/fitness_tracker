@@ -29,52 +29,57 @@
     <script src="../public/assets/js/landing.js"></script>
   </head>
   <body>
-    <header class="frow justify-between">
-      <div>
-        <div class="logo p-5">FitBOARD</div>
-        <span class="color-block"></span>
-      </div>
-      <div class="frow centered visible-md visible-lg">
-        <a class="p-5 ml-30">
-          About
-        </a>
-        <a class="ml-30">
-          Account
-        </a>
-        <a class="p-5 ml-30">
-          Sign Up
-        </a>
-      </div>
-      <div id="mobile-hamburger-closed">
-        <button
-          id="mobile-hamburger-menu"
-          class="visible-xs"
-          type="button"
-          onclick="hamburgerDisplyLink()"
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </button>
+    <div class="header">
+      <div id="mobile-hamburger-closed" class="frow height-100">
+        <div class="col-xs-1-4">
+          <div class="frow justify-start height-100 logo">FitBOARD</div>
+          <!-- <span class="color-block"></span> -->
+        </div>
+        <div class="nav col-xs-3-4 height-100">
+          <div
+            class="frow justify-end items-center height-100 visible-sm visible-md visible-lg"
+          >
+            <a>
+              About
+            </a>
+            <a>
+              Account
+            </a>
+            <a>
+              Sign Up
+            </a>
+          </div>
+          <div class="frow justify-end height-100 visible-xs">
+            <button
+              id="mobile-hamburger-menu"
+              type="button"
+              onclick="hamburgerDisplyLink()"
+            >
+              <div></div>
+              <div></div>
+              <div></div>
+            </button>
+          </div>
+        </div>
       </div>
       <div
         id="mobile-hamburger-displayed"
-        class="fow column-center small-nav nowrap"
+        class="frow row-around items-center small-nav height-100"
         hidden
       >
-        <ul class="frow centered-column">
-          <li>
-            <a>About</a>
-          </li>
-          <li>
-            <a>Account</a>
-          </li>
-          <li>
-            <a>Sign Up</a>
-          </li>
-        </ul>
+        <a>About</a>
+        <a>Account</a>
+        <a>Sign Up</a>
+        <button id="collaps-hamburger-menu"
+        type="button"
+        onclick="hamburgerHideLink()"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
       </div>
-    </header>
+    </div>
     <main class="frow-container mt-20">
       <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
       <h3 class="frow">

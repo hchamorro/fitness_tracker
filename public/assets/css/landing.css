@@ -1,9 +1,10 @@
-.color-block {
+.color-block-landing {
   width: 200px;
   height: 20px;
   background-color: #d3c02f;
   position: absolute;
-  margin-top: 18px;
+  left: 55px;
+  margin-top: 32px;
 }
 
 .nav a {

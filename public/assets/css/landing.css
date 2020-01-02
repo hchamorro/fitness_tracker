@@ -1,9 +1,10 @@
-.color-block {
+.color-block-landing {
   width: 200px;
   height: 20px;
   background-color: #d3c02f;
   position: absolute;
-  margin-top: 18px;
+  left: 55px;
+  margin-top: 32px;
 }
 
 .nav a {
@@ -58,7 +59,7 @@
 }
 
 .fitness {
-  background-image: url("https://images.unsplash.com/photo-1539798488725-7387f3229c49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-image: url("https://images.unsplascom/photo-1539798488725-7387f3229c49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
 }
 .workout {
   background-image: url("https://images.unsplash.com/photo-1541600383005-565c949cf777?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
@@ -70,4 +71,13 @@
 
 .competition {
   background-image: url("https://images.unsplash.com/photo-1508730328641-47c1616341b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80");
+}
+
+.back-display {
+  background-color: #d3c02f;
+}
+
+.slogan-font {
+  font-size: 1.8em;
+  margin-top: 1em;
 }

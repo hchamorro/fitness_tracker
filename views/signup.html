@@ -36,61 +36,71 @@
       </div>
     </div>
     <div class="frow-container shadow-dark mt-30">
-      <div class="frow gutters">
-        <div class="col-md-1-2">
-          <input
-            type="text"
-            maxlength="100"
-            required="required"
-            name="firstName"
-          />
-          <label>First Name</label>
-          <div>
-            This field is required
+      <form novalidate="novalidate" id="userForm">
+        <div class="frow gutters">
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="firstName"
+            />
+            <label>First Name</label>
+            <div class="error" hidden>
+              This field is required
+            </div>
+          </div>
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="lastName"
+            />
+            <label>Last Name</label>
+            <div class="error" hidden>
+              This field is required
+            </div>
           </div>
         </div>
-        <div class="col-md-1-2">
-          <input
-            type="text"
-            maxlength="100"
-            required="required"
-            name="lastName"
-          />
-          <label>Last Name</label>
-          <div>
-            This field is required
+        <div class="frow gutters">
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="email"
+            />
+            <label>Email</label>
+            <div class="error" hidden>
+              This field is required
+            </div>
+          </div>
+          <div class="col-md-1-2">
+            <input
+              type="password"
+              maxlength="100"
+              required="required"
+              name="password"
+            />
+            <label>Password</label>
+            <div class="error" hidden>
+              <p>
+                Log in error:
+              </p>
+              <p>
+                Needs 8 characters
+              </p>
+              <p>
+                Must contain: one letter and one number
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="frow gutters">
-        <div class="col-md-1-2">
-          <input type="text" maxlength="100" required="required" name="email" />
-          <label>Email</label>
-          <div>
-            This field is required
-          </div>
+        <div class="frow">
+          <button onclick="verification()">GO</button>
         </div>
-        <div class="col-md-1-2">
-          <input
-            type="password"
-            maxlength="100"
-            required="required"
-            name="password"
-          />
-          <label>Password</label>
-          <div>
-            <p>
-              Log in error:
-            </p>
-            <p>
-              Needs 8 characters
-            </p>
-            <p>
-              Must contain: one letter and one number
-            </p>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

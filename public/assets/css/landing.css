@@ -41,7 +41,7 @@
 }
 
 .main-wrapper {
-  width: 500px;
+  width: 600px;
   height: 400px;
   box-shadow: 0px 1px 3px 0px #a0a0a0;
   margin: 10px 0;
@@ -59,7 +59,7 @@
 }
 
 .fitness {
-  background-image: url("https://images.unsplascom/photo-1539798488725-7387f3229c49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-image: url("../../../FitBoard.jpg");
 }
 .workout {
   background-image: url("https://images.unsplash.com/photo-1541600383005-565c949cf777?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");

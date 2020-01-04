@@ -22,7 +22,11 @@ router.get("/", function(req, res) {
 });
 
 router.get("/getstarted", function(req, res) {
-  res.render("personalInfo");
+  res.render("form");
+});
+
+router.get("/signup", function(req, res) {
+  res.render("signup");
 });
 
 module.exports = router;

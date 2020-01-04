@@ -4,6 +4,8 @@ const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+const db = require('./models');
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -12,17 +14,13 @@ app.use(express.static('./public'));
 
 // Routes
 require('./controllers/routes/html-routes')(app);
+require('./controllers/routes/user-api-routes')(app);
+require('./controllers/routes/group-api-routes')(app);
 // Start server to begin listening
 
-app.listen(PORT, () => {
-  console.log(`Server listening on: http://localhost:${PORT}`);
-});
-
-//Eventually change to this once we add sequalize/SQL database
-/*
+//Change to db.sequelize.sync({ force: true }) to reset db for testing
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log('App listening on PORT ' + PORT);
   });
 });
-*/

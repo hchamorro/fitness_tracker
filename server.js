@@ -2,8 +2,6 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const db = require("./models");
 
-const postroutes = require("./controllers/routes/posts-api-routes");
-
 /* Express App setup */
 
 const app = express();
@@ -20,8 +18,8 @@ app.set("view engine", "handlebars");
 app.use(express.static("./public"));
 
 // Routes
-require("./controllers/routes/html-routes")(app);
-app.use(postroutes);
+//require("./controllers/routes/html-routes")(app);
+
 // Start server to begin listening
 
 // app.listen(PORT, () => {

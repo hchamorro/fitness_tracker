@@ -4,13 +4,21 @@
 
 // Dependencies
 // =============================================================
-const path = require("path");
+// const path = require("path");
+const express = require("express");
 
+const router = express.Router();
 // Routes
 // =============================================================
-module.exports = function(app) {
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.render("index", data);
-  });
-};
+// module.exports = function(app) {
+//   // index route loads view.html
+//   app.get("/", function(req, res) {
+//     res.render("index");
+//   });
+// };
+
+router.get("/", function(req, res) {
+  res.render("index");
+});
+
+module.exports = router;

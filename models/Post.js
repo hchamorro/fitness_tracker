@@ -22,5 +22,9 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  Post.associate = models => {
+    Post.belongsToMany(models.Group, { through: "PostGroup" });
+  };
+
   return Post;
 };

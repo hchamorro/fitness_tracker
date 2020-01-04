@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 
 /* Express App setup */
 
@@ -10,12 +10,8 @@ const db = require('./models');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Static directory
-app.use(express.static('./public'));
+app.use(express.static("./public"));
 
-// Routes
-require('./controllers/routes/html-routes')(app);
-require('./controllers/routes/user-api-routes')(app);
-require('./controllers/routes/group-api-routes')(app);
 // Start server to begin listening
 
 //Change to db.sequelize.sync({ force: true }) to reset db for testing

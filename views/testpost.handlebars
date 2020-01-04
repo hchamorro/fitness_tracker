@@ -1,0 +1,15 @@
+<section>
+    <h2>test Run</h2>
+
+    <ul>
+        {{#each posts}}
+        <li class="lst-n">
+            <p>
+                {{this.id}}. {{this.comment}}
+
+                <button class="del_post" data-postid="{{this.id}}">Delete Post</button>
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+</section>

@@ -4,13 +4,13 @@
 
 // Dependencies
 // =============================================================
-const path = require('path');
+const path = require("path");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
   // index route loads view.html
-  app.get('/', function(req, res) {
-    res.send('Touch down');
+  app.get("/", function(req, res) {
+    res.render("index", data);
   });
 };

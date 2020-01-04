@@ -1,7 +1,9 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
-const db = require("./models");
-const htmlRoute = require("./routes/html-routes");
+const express = require('express');
+const exphbs = require('express-handlebars');
+const db = require('./models');
+const htmlRoute = require('./routes/html-routes');
+const userApiRoute = require('./routes/user-api-routes');
+
 /* Express App setup */
 
 const app = express();
@@ -12,22 +14,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 // Static directory
-app.use(express.static("./public"));
+app.use(express.static('./public'));
 
 // Routes
 
 app.use(htmlRoute);
-
+app.use(userApiRoute);
 // Start server to begin listening
 
 //Eventually change to this once we add sequalize/SQL database
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log('App listening on PORT ' + PORT);
   });
 });

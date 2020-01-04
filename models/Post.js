@@ -7,7 +7,9 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 300]
       }
     },
-    image: {}
+    image: {
+      type: DataTypes.STRING
+    }
   });
 
   Post.associate = function(models) {
@@ -18,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+  };
+
+  Post.associate = models => {
+    Post.belongsToMany(models.Group, { through: "PostGroup" });
   };
 
   return Post;

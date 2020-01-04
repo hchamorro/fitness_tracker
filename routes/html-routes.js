@@ -21,4 +21,8 @@ router.get("/", function(req, res) {
   res.render("index");
 });
 
+router.get("/getstarted", function(req, res) {
+  res.render("personalInfo");
+});
+
 module.exports = router;

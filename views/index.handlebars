@@ -1,0 +1,82 @@
+<div class="header">
+    <div id="mobile-hamburger-closed" class="frow height-100">
+        <div class="col-xs-1-4">
+            <span class="color-block-landing"></span>
+            <div class="frow">
+                <div class="justify-start height-100 logo">FitBOARD</div>
+            </div>
+
+
+        </div>
+        <div class="nav col-xs-3-4 height-100">
+            <div class="frow justify-end items-center height-100 visible-sm visible-md visible-lg">
+                <a>
+                    About
+                </a>
+                <a>
+                    Account
+                </a>
+                <a>
+                    Sign Up
+                </a>
+            </div>
+            <div class="frow justify-end height-100 visible-xs">
+                <button id="mobile-hamburger-menu" type="button" onclick="hamburgerDisplyLink()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-hamburger-displayed" class="frow row-around items-center small-nav height-100" hidden>
+        <a>About</a>
+        <a>Account</a>
+        <a>Sign Up</a>
+        <button id="collaps-hamburger-menu" type="button" onclick="hamburgerHideLink()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+    </div>
+</div>
+<main class="frow-container mt-20">
+    <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
+    <h3 class="frow">
+        <div class="slogan-font">Compete with your friends on FitBOARD</div>
+    </h3>
+    <h4 class="frow mt-10">
+        Set a challenge, join a group, and start competing.
+    </h4>
+    <!-- see above message for details  -->
+
+    <div class="frow nowrap mt-20">
+        <label class="col-md-5-6 col-xs-4-5 user-form user-inputs my-custom-textarea mx-5">
+            <input id="user-email" type="text" placeholder="Enter Your Email Address" />
+        </label>
+        <button class="col-md-1-6 col-xs-1-5 mx-5">Git Fit</button>
+    </div>
+    <div class="frow mt-30">
+        more content about our product, promotions? solgans?
+    </div>
+    <div class="frow mt-40">
+        testing123
+        <div class="frow mt-50"></div>
+        <div id="chart_div"></div>
+    </div>
+    <div class="frow mt-30">
+        <div class="col-md-1-3 frow">
+            Show your workouts!
+            <div class="small-wrapper workout"></div>
+            <!-- <i class="fas fa-dumbbell fa-3x"></i> -->
+        </div>
+        <div class="col-md-1-3 frow">
+            Hang with your friends
+            <div class="small-wrapper friends"></div>
+        </div>
+        <div class="col-md-1-3 frow">
+            Win the competition
+            <div class="small-wrapper competition"></div>
+        </div>
+    </div>
+</main>

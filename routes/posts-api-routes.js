@@ -17,8 +17,8 @@ router.get("/api/posts", function(req, res) {
     let data = {
       posts: results
     };
-    res.render("testpost", data);
-    // res.json(dbPost);
+    //res.render("testpost", data);
+    res.json(results);
   });
 });
 

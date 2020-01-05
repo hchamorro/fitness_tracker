@@ -31,6 +31,7 @@ $(function() {
       data: newUser
     }).then(() => {
       console.log(`added ${JSON.stringify(newUser)} to the User table`);
+      location.assign("http://localhost:8080/getstarted");
     });
   });
 });

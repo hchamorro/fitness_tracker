@@ -3,6 +3,10 @@ $(document).ready(function() {
   const firstName = $("#first-name");
   const lastName = $("#last-name");
 
+  // let dob = $("#date-age").val;
+
+  // console.log(dob);
+
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a info)

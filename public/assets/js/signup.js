@@ -29,9 +29,10 @@ $(function() {
     $.ajax("/api/user", {
       type: "POST",
       data: newUser
-    }).then(() => {
+    }).then(result => {
       console.log(`added ${JSON.stringify(newUser)} to the User table`);
-      location.assign("http://localhost:8080/getstarted");
+      let nextPage = `/getstarted?user_id=${result.id}`;
+      location.assign(nextPage);
     });
   });
 });

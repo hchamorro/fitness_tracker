@@ -16,30 +16,30 @@ module.exports = (sequelize, DataTypes) => {
     },
     birthDate: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: !false,
       len: [1, 2]
     },
     birthMonth: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: !false,
       len: [1, 2]
     },
     birthYear: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: !false,
       len: [4, 4]
     },
     height: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: !false
     },
     weight: {
       type: DataTypes.DECIMAL(5, 2),
-      allowNull: false
+      allowNull: !false
     },
     venmo: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: !false,
       validate: {
         len: [1]
       }

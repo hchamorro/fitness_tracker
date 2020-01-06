@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars");
 const db = require("./models");
 const htmlRoute = require("./routes/html-routes");
 const userApiRoute = require("./routes/user-api-routes");
+const userInfoApiRoute = require("./routes/userInfo-api-routes");
 
 /* Express App setup */
 
@@ -24,6 +25,8 @@ app.use(express.static("./public"));
 
 app.use(htmlRoute);
 app.use(userApiRoute);
+app.use(userInfoApiRoute);
+
 // Start server to begin listening
 
 //Eventually change to this once we add sequalize/SQL database

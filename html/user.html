@@ -30,6 +30,7 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
+    <script type="text/javascript" src="../public/assets/js/home.js"></script>
   </head>
   <body>
     <div class="header">
@@ -87,22 +88,36 @@
       </div>
     </div>
 
-    <div class="frow">
+    <div class="frow mt-50">
       <div class="col-md-3-4 col-xs-3-4">
         <div class="frow column-center">
-          <div class="frow column-center shadow-dark">user1
-            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="200" width="200"></img>
-            <div>text area for previous peoples posts</div>
+          <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
+            <div>Username</div>
+            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="450" width="500"></img>
+            <div>
+              <i class="fas fa-heart mt-10" style="color:slategray;"></i> 
+              <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+            </div>
+            <div class="mt-15">Workout: text area for previous peoples posts</div>
             <div>more information or tweets?</div>
           </div>
-          <div class="frow column-center shadow-dark">user2
-            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="200" width="200"></img>
-            <div>text area for previous peoples posts</div>
+          <div class="frow column-center shadow-dark mt-30 pl-5 pr-5 pb-20 pt-20 user-bc">user2
+            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="450" width="500"></img>
+            <div>
+              <i class="fas fa-heart mt-10" style="color:slategray;"></i> 
+              <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+            </div>
+            
+            <div class="mt-15">Workout: text area for previous peoples posts</div>
             <div>more information or tweets?</div>
           </div>
-          <div class="frow column-center shadow-dark">user3
-            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="200" width="200"></img>
-            <div>text area for previous peoples posts</div>
+          <div class="frow column-center shadow-dark mt-30 pl-5 pr-5 pb-20 pt-20 user-bc">user3
+            <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="450" width="500"></img>
+            <div>
+              <i class="fas fa-heart mt-10" style="color:slategray;"></i> 
+              <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+            </div>
+            <div class="mt-15">Workout: text area for previous peoples posts</div>
             <div>more information or tweets?</div>
           </div>
         </div>
@@ -111,23 +126,25 @@
         <div class="frow column-center">
           <div>
             <div class="frow row-center">
-              <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="70" width="70"></img>
-              <div>USER</div>
+              <img src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" height="80" width="82" class="user-profile-image"></img>
+              <div class="ml-10">katiemcbride</div>
             </div>
           </div>
-          <div>Scoreboard
+          <div class="mt-30 mr-10">Scoreboard
             <div class="shadow-dark">
               <ul>
-                <li>1</li>
+                <li>1. I want to insert the graph of progress here.</li>
                 <li>2</li>
                 <li>3</li>
 
               </ul>
             </div>
           </div>
-          <div>random</div>
+        
         </div>
-        R side
+        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="popupPost()"></i>
+          Check-In
+          <span class="popuptext" id="popupUser">Popup!</span>
       </div>
     </div>
   </body>

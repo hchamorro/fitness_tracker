@@ -16,17 +16,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     birthDate: {
       type: DataTypes.INTEGER,
-      allowNull: !false,
+      allowNull: false,
       len: [1, 2]
     },
     birthMonth: {
       type: DataTypes.INTEGER,
-      allowNull: !false,
+      allowNull: false,
       len: [1, 2]
     },
     birthYear: {
       type: DataTypes.INTEGER,
-      allowNull: !false,
+      allowNull: false,
       len: [4, 4]
     },
     height: {

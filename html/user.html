@@ -30,6 +30,7 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
+    <script type="text/javascript" src="../public/assets/js/home.js"></script>
   </head>
   <body>
     <div class="header">
@@ -141,8 +142,9 @@
           </div>
         
         </div>
-        <i class="fas fa-3x fa-plus-circle mt-20" style="color:#D3C02F;"></i>
+        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="popupPost()"></i>
           Check-In
+          <span class="popuptext" id="popupUser">Popup!</span>
       </div>
     </div>
   </body>

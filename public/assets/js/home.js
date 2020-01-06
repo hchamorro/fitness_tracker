@@ -31,3 +31,10 @@ $(function() {
     });
   }
 });
+
+// Working on a pop up for the post
+function popupPost() {
+  var popup = document.getElementById("popupUser");
+  popup.classList.toggle("show");
+};
+

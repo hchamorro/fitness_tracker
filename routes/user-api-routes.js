@@ -20,20 +20,32 @@ router.get("/api/user/:id", (req, res) => {
 });
 //POST route to add a new user
 router.post("/api/user", (req, res) => {
-  bcrypt.hash(req.body.password, 8, (err, hash) => {
-    console.log(hash);
-    if (err) {
-      return res.status(500).json({
-        error: err
+  db.User.findOne({
+    where: {
+      userName: req.body.userName
+    }
+  }).then(user => {
+    if (user) {
+      return res.status(409).json({
+        message: "user name already exists"
       });
     } else {
-      db.User.create({
-        userName: req.body.userName,
-        email: req.body.email,
-        password: hash
-      }).then(result => {
-        console.log("1 entry successfully added");
-        res.json(result);
+      bcrypt.hash(req.body.password, 8, (err, hash) => {
+        console.log(hash);
+        if (err) {
+          return res.status(500).json({
+            error: err
+          });
+        } else {
+          db.User.create({
+            userName: req.body.userName,
+            email: req.body.email,
+            password: hash
+          }).then(result => {
+            console.log("1 entry successfully added");
+            res.json(result);
+          });
+        }
       });
     }
   });

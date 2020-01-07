@@ -142,10 +142,33 @@
           </div>
         
         </div>
-        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="popupPost()"></i>
+        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
           Check-In
-          <span class="popuptext" id="popupUser">Popup!</span>
       </div>
+
+        <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form novalidate="novalidate" id="userForm">
+            <p>Picture.</p>
+            <div class="col-md-1-2">
+              <label>Workout:</label>
+              <input
+                type="text"
+                maxlength="300"
+                required="required"
+                name="workoutPost"
+              />
+            </div>
+            <input type="submit" value="Submit">
+          </form>
+
+      </div>
+
+    </div>    
     </div>
   </body>
 </html>

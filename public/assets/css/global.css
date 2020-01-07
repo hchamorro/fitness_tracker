@@ -64,10 +64,15 @@ button.my-custom-button {
   margin-bottom: 4px;
 }
 
+#mobile-hamburger-menu,
+#collaps-hamburger-menu {
+  border: 0;
+  background: none;
+}
+
 .small-nav {
   font-size: 11px;
 }
-
 
 .main-wrapper {
   width: 600px;
@@ -111,7 +116,6 @@ button.my-custom-button {
   margin-top: 1em;
 }
 
-
 .color-block {
   width: 200px;
   height: 20px;
@@ -121,11 +125,11 @@ button.my-custom-button {
   margin-top: 18px;
 }
 
-.user-bc{
+.user-bc {
   background-color: #f8f8f8;
 }
 
-.user-profile-image{
+.user-profile-image {
   border-radius: 50%;
 }
 
@@ -135,9 +139,6 @@ button.my-custom-button {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -176,9 +177,14 @@ button.my-custom-button {
   animation: fadeIn 1s;
 }
 
+.error {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 
-
-
+.dirty + .error {
+  opacity: 1;
+}
 
 /* #C5D2EF lavender*/
 /* #D3C02F- yellow */

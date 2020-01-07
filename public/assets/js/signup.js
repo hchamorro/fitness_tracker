@@ -1,5 +1,18 @@
 $(function() {
   console.log("signup");
+  const inputs = document.querySelectorAll("input");
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      const value = input.value.trim();
+      if (!value) {
+        input.classList.add("dirty");
+      } else {
+        input.classList.remove("dirty");
+      }
+    });
+  });
+
   $("#userForm").submit(() => {
     event.preventDefault();
     let submit = true;

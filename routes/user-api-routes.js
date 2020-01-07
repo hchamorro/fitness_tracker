@@ -1,6 +1,6 @@
 const db = require("../models");
 const express = require("express");
-
+const bcrypt = require("bcryptjs");
 const router = express.Router();
 
 router.get("/api/user", (req, res) => {
@@ -20,13 +20,22 @@ router.get("/api/user/:id", (req, res) => {
 });
 //POST route to add a new user
 router.post("/api/user", (req, res) => {
-  db.User.create({
-    userName: req.body.userName,
-    email: req.body.email,
-    password: req.body.password
-  }).then(result => {
-    console.log("1 entry successfully added");
-    res.json(result);
+  bcrypt.hash(req.body.password, 8, (err, hash) => {
+    console.log(hash);
+    if (err) {
+      return res.status(500).json({
+        error: err
+      });
+    } else {
+      db.User.create({
+        userName: req.body.userName,
+        email: req.body.email,
+        password: hash
+      }).then(result => {
+        console.log("1 entry successfully added");
+        res.json(result);
+      });
+    }
   });
 });
 //DELETE route to delete user

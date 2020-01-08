@@ -115,15 +115,16 @@
             <p>
               <div class="camera">
                 <video id="video">Video stream not available.</video>
-                <button id="startbutton">Take photo</button> 
+                <img id="photo" alt="The screen capture will appear in this box.">
+                <button id="startbutton">Take photo</button>
               </div>
               <canvas id="canvas">
               </canvas>
               <div class="output">
-                <img id="photo" alt="The screen capture will appear in this box."> 
+                {{!-- <img id="photo" alt="The screen capture will appear in this box.">  --}}
               </div>
             </p>
-            <div class="col-md-1-2">
+            <div class="col-md-1-2" id="comment">
               <label>Workout:</label>
               <input
                 type="text"

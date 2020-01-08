@@ -14,29 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
-    birthDate: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      len: [1, 2]
-    },
-    birthMonth: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      len: [1, 2]
-    },
-    birthYear: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      len: [4, 4]
-    },
-    height: {
-      type: DataTypes.DECIMAL,
-      allowNull: !false
-    },
-    weight: {
-      type: DataTypes.DECIMAL(5, 2),
-      allowNull: !false
-    },
     venmo: {
       type: DataTypes.STRING,
       allowNull: !false,

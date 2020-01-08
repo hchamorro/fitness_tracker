@@ -9,3 +9,8 @@ const hamburgerHideLink = () => {
   document.getElementById("mobile-hamburger-closed").hidden = false;
   document.getElementById("mobile-hamburger-displayed").hidden = true;
 };
+
+const signInIndex = () => {
+  document.getElementById("signin-showing").hidden = false;
+  console.log("signinindex");
+};

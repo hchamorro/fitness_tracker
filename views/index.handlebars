@@ -50,13 +50,47 @@
           <div
             class="frow justify-end items-center height-100"
           >
-            <a class="mr-25">
+            <a class="mr-25" onclick="signInIndex()">
               Login
             </a>
           </div>
         </div>
       </di>
     </div>
+    <div id="signin-showing" class="frow justify-end" hidden>
+      <div class="shadow-light mr-20">
+        <input
+            type="text"
+            maxlength="100"
+            required="required"
+            name="userName"
+        />
+        <label>User Name</label>
+        <div id="error-user-name" class="error" hidden>
+          This field is required
+        </div>
+        <input
+          type="password"
+          maxlength="100"
+          required="required"
+          name="password"
+        />
+        <label>Password</label>
+        <div class="error" hidden>
+          <p>
+            Log in error:
+          </p>
+          <p>
+            Needs 8 characters
+          </p>
+          <p>
+            Must contain: one letter and one number
+          </p>
+        </div>
+      </div>
+    </div>
+        
+        
     <main class="frow-container mt-20">
       <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
       <h3 class="frow">

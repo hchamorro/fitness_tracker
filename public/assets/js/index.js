@@ -1,29 +1,4 @@
-// $(() => {
-//   $("#submit-form").on("click", event => {
-//     event.preventDefault();
-
-//     let myDate = $("#date-age").val();
-//     console.log(myDate);
-
-//     let newUser = {
-//       firstName: $("#first-name")
-//         .val()
-//         .trim(),
-//       lastName: $("#last-name")
-//         .val()
-//         .trim(),
-//       DOB: $("date-age").val(),
-//       gender: $("#gender option:selected").text(),
-//       payment: $("#pay-source")
-//         .val()
-//         .trim()
-//     };
-//     console.log("button click", newUser);
-//   });
-// });
-
-$(function() {
-  console.log('signup');
+$(() => {
   const inputs = document.querySelectorAll('input');
 
   inputs.forEach(input => {
@@ -47,32 +22,35 @@ $(function() {
     //Add username to database
 
     let newUser = {
-      userName: $('[name="userName"]')
+      firstName: $('[name="firstName"]')
+        .val()
+        .trim(),
+      lastName: $('[name="lastName"]')
+        .val()
+        .trim(),
+      userName: $('#userName')
         .val()
         .trim(),
       email: $('[name="email"]')
         .val()
         .trim(),
-      password: $('[name="password"]')
+      password: $('#password')
         .val()
         .trim()
     };
-
+    
     $.ajax('/api/user', {
       type: 'POST',
       data: newUser
     }).then(result => {
-      console.log(`added ${JSON.stringify(newUser)} to the User table`);
-      $.ajax('/api/user', {
+      newUser.userId = result.id;
+      $.ajax('/api/user_info', {
         type: 'POST',
         data: newUser
       }).then(result => {
-        console.log(`added ${JSON.stringify(newUser)} to the User table`);
-        let nextPage = `/home?user_id=${result.id}`;
+        let nextPage = `/home?user_id=${newUser.userId}`;
         location.assign(nextPage);
       });
-      let nextPage = `/home?user_id=${result.id}`;
-      location.assign(nextPage);
     });
   });
 });

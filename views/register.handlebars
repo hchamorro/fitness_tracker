@@ -14,10 +14,17 @@
                     This field is required
                 </div>
             </div>
-
         </div>
         <div class="frow gutters">
             <div class="col-md-1-2">
+                <label>
+                    First Name
+                    <input type="textarea" id="first-name" class="my-custom-textarea"></input>
+                </label>
+                <label>
+                    Last Name
+                    <input type="textarea" id="last-name" class="my-custom-textarea"></input>
+                </label>
                 <label class="mb-0">Email</label>
                 <input class="mb-10" type="text" maxlength="100" required="required" name="email" />
                 <div class="error">
@@ -40,8 +47,41 @@
                 </div>
             </div>
         </div>
-        <div class="frow">
+         <div class="frow-container user-form user-inputs mt-15">
+      <form>
+        <label>
+          DOB
+          <input id="date-age" type="date" class="m-5" value="" />
+        </label>
+        <label>
+          Gender
+          <select id="gender">
+            <optgroup label="Gender">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to say</option>
+            </optgroup>
+          </select>
+        </label>
+        <label class="">
+          Venmo
+          <input type="textarea" id="pay-source" class="my-custom-textarea"></input>
+        </label>
+        <label class="">
+          Add a profile picture
+          <input type="file" />
+        </label>
+        <button
+          id="submit-form"
+          class="my-custom-button items-center"
+          type="button"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+        {{!-- <div class="frow">
             <button>GO</button>
-        </div>
+        </div> --}}
     </form>
 </div>

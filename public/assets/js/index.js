@@ -45,11 +45,6 @@ $(function() {
     }
 
     //Add username to database
-    let newUserName = {
-      userName: $('[name="userName"]')
-        .val()
-        .trim()
-    };
 
     let newUser = {
       userName: $('[name="userName"]')
@@ -68,6 +63,14 @@ $(function() {
       data: newUser
     }).then(result => {
       console.log(`added ${JSON.stringify(newUser)} to the User table`);
+      $.ajax('/api/user', {
+        type: 'POST',
+        data: newUser
+      }).then(result => {
+        console.log(`added ${JSON.stringify(newUser)} to the User table`);
+        let nextPage = `/home?user_id=${result.id}`;
+        location.assign(nextPage);
+      });
       let nextPage = `/home?user_id=${result.id}`;
       location.assign(nextPage);
     });

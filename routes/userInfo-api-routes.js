@@ -1,9 +1,9 @@
-const db = require("../models");
-const express = require("express");
+const db = require('../models');
+const express = require('express');
 
 const router = express.Router();
 
-router.get("/api/user_info", function(req, res) {
+router.get('/api/user_info', function(req, res) {
   let query = {};
   if (req.query.user_id) {
     query.userId = req.query.user_id;
@@ -18,7 +18,7 @@ router.get("/api/user_info", function(req, res) {
 });
 
 //GET route for personal info 1
-router.get("/api/user_info/:id", (req, res) => {
+router.get('/api/user_info/:id', (req, res) => {
   db.PersonalInfo.findOne({
     where: {
       id: req.params.id
@@ -28,14 +28,14 @@ router.get("/api/user_info/:id", (req, res) => {
   });
 });
 
-router.post("/api/user_info", (req, res) => {
+router.post('/api/user_info', (req, res) => {
   db.PersonalInfo.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    payment: req.body.payment,
+    venmo: req.body.payment,
     UserId: req.body.UserId
   }).then(result => {
-    console.log("1 entry successfully added");
+    console.log('1 entry successfully added');
     res.json(result);
   });
 });

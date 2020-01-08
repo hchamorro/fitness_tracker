@@ -1,9 +1,11 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
-const db = require("./models");
-const htmlRoute = require("./routes/html-routes");
-const userApiRoute = require("./routes/user-api-routes");
-const userInfoApiRoute = require("./routes/userInfo-api-routes");
+const express = require('express');
+const exphbs = require('express-handlebars');
+const db = require('./models');
+
+const htmlRoute = require('./routes/html-routes');
+const userApiRoute = require('./routes/user-api-routes');
+const userInfoApiRoute = require('./routes/userInfo-api-routes');
+const pathApiRoute = require('./routes/posts-api-routes');
 
 /* Express App setup */
 
@@ -15,18 +17,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 // Static directory
-app.use(express.static("./public"));
-app.use("/uploads", express.static("uploads"));
+app.use(express.static('./public'));
+app.use('/uploads', express.static('uploads'));
 
 // Routes
 
 app.use(htmlRoute);
 app.use(userApiRoute);
 app.use(userInfoApiRoute);
+app.use(pathApiRoute);
 
 // Start server to begin listening
 
@@ -34,6 +37,6 @@ app.use(userInfoApiRoute);
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log('App listening on PORT ' + PORT);
   });
 });

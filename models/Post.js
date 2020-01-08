@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  var Post = sequelize.define('Post', {
     comment: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,9 +22,9 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  Post.associate = models => {
-    Post.belongsToMany(models.Group, { through: "PostGroup" });
-  };
+  // Post.associate = models => {
+  //   Post.belongsToMany(models.Group, { through: "PostGroup" });
+  // };
 
   return Post;
 };

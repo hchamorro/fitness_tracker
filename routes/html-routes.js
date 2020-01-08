@@ -21,13 +21,8 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
-router.get('/getstarted', function(req, res) {
-  res.render('form');
-});
-
-
-router.get("/register", function(req, res) {
-  res.render("register");
+router.get('/profile', function(req, res) {
+  res.render('profile');
 });
 
 router.get('/home', function(req, res) {

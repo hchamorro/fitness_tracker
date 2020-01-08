@@ -59,7 +59,7 @@
               Profile
             </a>
             <a class="ml-25">
-              Sign In
+              Login
             </a>
           </div>
           <div class="frow justify-end height-100 visible-xs">
@@ -82,7 +82,7 @@
       >
         <a>About</a>
         <a>Profile</a>
-        <a>Sign In</a>
+        <a>Login</a>
         <button
           id="collaps-hamburger-menu"
           type="button"
@@ -103,23 +103,77 @@
         Set a challenge, join a group, and start competing. 
       </h4>
       <!-- see above message for details  -->
-
-      <div class="frow nowrap mt-30">
-        <label
-          class="col-md-5-6 col-xs-4-5 user-form user-inputs my-custom-textarea mx-5"
-        >
-          <input
-            id="user-email"
-            type="text"
-            placeholder="Enter Your Email Address"
-          />
-        </label>
-        <button class="col-md-1-6 col-xs-1-5 mx-5">Git Fit</button>
-      </div>
       <div class="frow mt-30">
+
+          <div class="frow-container shadow-dark mt-30">
+      <form novalidate="novalidate" id="userForm">
+        <div class="frow gutters">
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="firstName"
+            />
+            <label>First Name</label>
+            <div id="error-first-name" class="error" hidden>
+              This field is required
+            </div>
+          </div>
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="lastName"
+            />
+            <label>Last Name</label>
+            <div id="error--name" class="error" hidden>
+              This field is required
+            </div>
+          </div>
+        </div>
+        <div class="frow gutters">
+          <div class="col-md-1-2">
+            <input
+              type="text"
+              maxlength="100"
+              required="required"
+              name="email"
+            />
+            <label>Email</label>
+            <div class="error" hidden>
+              This field is required
+            </div>
+          </div>
+          <div class="col-md-1-2">
+            <input
+              type="password"
+              maxlength="100"
+              required="required"
+              name="password"
+            />
+            <label>Password</label>
+            <div class="error" hidden>
+              <p>
+                Log in error:
+              </p>
+              <p>
+                Needs 8 characters
+              </p>
+              <p>
+                Must contain: one letter and one number
+              </p>
+            </div>
+          </div>
+        </div>
+        <button id="register" class="col-md-1-6 col-xs-1-5 mx-5">Sign Up</button>
+        <div class="frow">
+        </div>
+      </form>
+    </div>
         
       </div>
-
       <div class="frow mt-40">
         <div class="frow mt-30"></div>
         <div id="chart_div"></div>

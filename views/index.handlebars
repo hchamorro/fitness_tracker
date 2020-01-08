@@ -39,61 +39,58 @@
   </head>
   <body>
     <div class="header">
-      <div id="mobile-hamburger-closed" class="frow height-100">
+      <di class="frow height-100">
         <div class="col-xs-1-4">
           <span class="color-block-landing"></span>
           <div class="frow">
             <div class="justify-start height-100 logo">FitBOARD</div>
           </div>
-          
-         
         </div>
-        <div class="nav col-xs-3-4 height-100">
+        <div class="col-xs-3-4 height-100">
           <div
-            class="frow justify-end items-center height-100 visible-sm visible-md visible-lg"
+            class="frow justify-end items-center height-100"
           >
-            <a class="ml-25">
-              About
-            </a>
-            <a class="ml-25">
-              Profile
-            </a>
-            <a class="ml-25">
+            <a class="mr-25" onclick="signInIndex()">
               Login
             </a>
           </div>
-          <div class="frow justify-end height-100 visible-xs">
-            <button
-              id="mobile-hamburger-menu"
-              type="button"
-              onclick="hamburgerDisplayLink()"
-            >
-              <div></div>
-              <div></div>
-              <div></div>
-            </button>
-          </div>
+        </div>
+      </di>
+    </div>
+    <div id="signin-showing" class="frow justify-end" hidden>
+      <div class="shadow-light mr-20">
+        <input
+            type="text"
+            maxlength="100"
+            required="required"
+            name="userName"
+        />
+        <label>User Name</label>
+        <div id="error-user-name" class="error" hidden>
+          This field is required
+        </div>
+        <input
+          type="password"
+          maxlength="100"
+          required="required"
+          name="password"
+        />
+        <label>Password</label>
+        <div class="error" hidden>
+          <p>
+            Log in error:
+          </p>
+          <p>
+            Needs 8 characters
+          </p>
+          <p>
+            Must contain: one letter and one number
+          </p>
         </div>
       </div>
-      <div
-        id="mobile-hamburger-displayed"
-        class="frow row-between items-center small-nav height-100"
-        hidden
-      >
-        <a>About</a>
-        <a>Profile</a>
-        <a>Login</a>
-        <button
-          id="collaps-hamburger-menu"
-          type="button"
-          onclick="hamburgerHideLink()"
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </button>
-      </div>
     </div>
+        
+        
     <main class="frow-container mt-20">
       <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
       <h3 class="frow">

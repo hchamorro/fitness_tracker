@@ -28,7 +28,7 @@ router.get('/api/post', (req, res) => {
 });
 
 //Find post based off ID
-router.get('/api/posts/:id', (req, res) => {
+router.get('/api/post/:id', (req, res) => {
   db.Post.findOne({
     where: {
       id: req.params.id
@@ -38,13 +38,30 @@ router.get('/api/posts/:id', (req, res) => {
   });
 });
 
-//Update post
-router.post('/api/user_info', (req, res) => {
-  db.PersonalInfo.create({
-    comment: req.body.comment
-    // image: req.body.path
+//POST route to create post
+router.post('/api/post', (req, res) => {
+  db.Post.create({
+    comment: req.body.comment,
+    UserId: req.body.UserId
   }).then(result => {
     console.log('1 entry successfully added');
+    res.json(result);
+  });
+});
+
+//PUT route to edit post comment
+router.put('/api/post', (req, res) => {
+  db.Post.update(
+    {
+      comment: req.body.comment
+    },
+    {
+      where: {
+        id: req.body.id
+      }
+    }
+  ).then(result => {
+    console.log('1 entry edited successfully');
     res.json(result);
   });
 });

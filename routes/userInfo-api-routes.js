@@ -33,7 +33,7 @@ router.post("/api/user_info", (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     payment: req.body.payment,
-    UserId: req.body.userId
+    UserId: req.body.UserId
   }).then(result => {
     console.log("1 entry successfully added");
     res.json(result);

@@ -29,11 +29,8 @@ router.get('/home', function(req, res) {
   res.render('home');
 });
 
-router.get('/tom2', function(req, res) {
-  res.render('tom2');
+router.get('/login', function(req, res) {
+  res.render('login');
 });
 
-router.get('/tom3', function(req, res) {
-  res.render('tom3');
-});
 module.exports = router;

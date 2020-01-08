@@ -1,5 +1,10 @@
 $(() => {
   const inputs = document.querySelectorAll('input');
+  const url = window.location.search;
+  let userId;
+  if (url.indexOf('?user_id=') !== -1) {
+    userId = url.split('=')[1];
+  }
 
   inputs.forEach(input => {
     input.addEventListener('input', () => {
@@ -38,7 +43,7 @@ $(() => {
         .val()
         .trim()
     };
-    
+
     $.ajax('/api/user', {
       type: 'POST',
       data: newUser
@@ -52,5 +57,14 @@ $(() => {
         location.assign(nextPage);
       });
     });
+  });
+
+  function signInIndex() {
+    location.assign('/login');
+  }
+
+  $('#goToProfile').on('click', () => {
+    let nextPage = `/profile?user_id=${userId}`;
+    location.assign(nextPage);
   });
 });

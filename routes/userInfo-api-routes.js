@@ -40,4 +40,22 @@ router.post('/api/user_info', (req, res) => {
   });
 });
 
+router.put('/api/user_info', (req, res) => {
+  db.PersonalInfo.update(
+    {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      venmo: req.body.venmo
+    },
+    {
+      where: {
+        userId: req.body.userId
+      }
+    }
+  ).then(result => {
+    console.log('1 entry edited successfully');
+    res.json(result);
+  });
+});
+
 module.exports = router;

@@ -33,7 +33,7 @@ router.post('/api/user_info', (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     venmo: req.body.payment,
-    UserId: req.body.UserId
+    UserId: req.body.userId
   }).then(result => {
     console.log('1 entry successfully added');
     res.json(result);

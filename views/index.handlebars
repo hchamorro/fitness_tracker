@@ -41,15 +41,14 @@
   <main class="frow-container mt-20">
     <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
     <h3 class="frow">
-      <div class="slogan-font">Compete with your friends on FitBOARD</div>
+      <div class="slogan-font">JOIN. COMPETE. WIN.</div>
     </h3>
-    <h4 class="frow mt-15">
-      Set a challenge, join a group, and start competing.
-    </h4>
+    <div class="scroll-down"></div>
     <!-- see above message for details  -->
-    <div class="frow mt-30">
 
-      <div class="frow-container shadow-dark mt-30">
+    <div class="frow mt-50 sign-up">
+       <div class="mt-20 top-font">Sign up for free today!</div>
+      <div class="frow-container mt-30">
         <form novalidate="novalidate" id="userForm">
           <div class="frow gutters">
             <div class="col-md-1-2">
@@ -59,6 +58,8 @@
                 This field is required
               </div>
             </div>
+          </div>
+          <div class="frow gutters">
             <div class="col-md-1-2">
               <input type="text" maxlength="100" required="required" name="lastName" />
               <label>Last Name</label>
@@ -67,12 +68,14 @@
               </div>
             </div>
           </div>
+          <div class="frow gutters">
           <div class="col-md-1-2">
             <input type="text" maxlength="100" required="required" name="userName" id="userName" />
             <label>User Name</label>
             <div id="error-user-name" class="error" hidden>
               This field is required
             </div>
+          </div>
           </div>
           <div class="frow gutters">
             <div class="col-md-1-2">
@@ -82,6 +85,8 @@
                 This field is required
               </div>
             </div>
+          </div>
+          <div class="frow gutters">
             <div class="col-md-1-2">
               <input type="password" maxlength="100" required="required" name="password" id="password" />
               <label>Password</label>
@@ -96,15 +101,14 @@
                   Must contain: one letter and one number
                 </p>
               </div>
+              <button id="register" class="col-md-1-2 mb-10 sign-up-btn">Sign Up</button>
             </div>
-          </div>
-          <button id="register" class="col-md-1-6 col-xs-1-5 mx-5">Sign Up</button>
-          <div class="frow">
           </div>
         </form>
       </div>
+  </div>
 
-    </div>
+
     <div class="frow mt-40">
       <div class="frow mt-30"></div>
       <div id="chart_div"></div>

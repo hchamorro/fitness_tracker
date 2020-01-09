@@ -17,21 +17,21 @@ module.exports = {
           updatedAt: new Date()
         },
         {
-          userName: 'User1',
+          userName: 'User2',
           email: 'email2@email.com',
           password: 'blank',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          userName: 'User1',
+          userName: 'User3',
           email: 'email3@email.com',
           password: 'blank',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          userName: 'User1',
+          userName: 'User4',
           email: 'email4@email.com',
           password: 'blank',
           createdAt: new Date(),

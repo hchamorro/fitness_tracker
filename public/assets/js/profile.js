@@ -35,6 +35,9 @@ $(document).ready(function() {
     let profilePicture = null;
     if (file) {
       profilePicture = await base64EncodeFile(file);
+      const preview = document.querySelector("#profilepix");
+      preview.src = profilePicture;
+      preview.hidden = false;
     }
 
     console.log("profilepix", profilePicture);

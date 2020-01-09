@@ -6,8 +6,8 @@ $(document).ready(function() {
   // Looks for a query param in the url for user_id
   const url = window.location.search;
   let userId;
-  if (url.indexOf("?user_id=") !== -1) {
-    userId = url.split("=")[1];
+  if (url.indexOf('?user_id=') !== -1) {
+    userId = url.split('=')[1];
     getPosts(userId);
   }
   // If there's no userId we just get all posts as usual
@@ -25,13 +25,29 @@ $(document).ready(function() {
         ? scoreboard[userId.User.userName] + 1
         : 1;
     }
-    console.log(scoreboard);
-
-
     //Convert object into array of key/value pairs
     const scoreboardArray = Object.entries(scoreboard);
     for (const [username, score] of scoreboardArray) {
       $('#scoreboard').append(`<div> ${username} : ${score} </div>`);
+    }
+  };
+
+  const renderPosts = async () => {
+    const allPosts = await getPosts();
+    console.log(allPosts);
+    for (const { comment, User } of allPosts) {
+      $('#postWall').append(`
+      <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
+      <div>${User.userName}</div>
+      <img
+        src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        height="450" width="500"></img>
+      <div>
+        <i class="fas fa-heart mt-10" style="color:slategray;"></i>
+        <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+      </div>
+      <div class="mt-15">Comment stored in db is : "${comment}"</div>
+    </div>`);
     }
   };
 
@@ -49,32 +65,33 @@ $(document).ready(function() {
   }
 
   renderScoreboard();
+  renderPosts();
 });
 
 $(document).ready(function() {
   // Get the modal
-  var modal = document.getElementById("myModal");
+  var modal = document.getElementById('myModal');
 
   // Get the button that opens the modal
-  var modBtn = document.getElementById("popupUser");
+  var modBtn = document.getElementById('popupUser');
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByClassName('close')[0];
 
   // When the user clicks on the button, open the modal
   modBtn.onclick = function() {
-    modal.style.display = "block";
+    modal.style.display = 'block';
   };
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-    modal.style.display = "none";
+    modal.style.display = 'none';
   };
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+      modal.style.display = 'none';
     }
   };
 });
@@ -87,34 +104,34 @@ const constraints = (window.constraints = {
 });
 
 function handleSuccess(stream) {
-  const video = document.querySelector("video");
+  const video = document.querySelector('video');
   const videoTracks = stream.getVideoTracks();
-  console.log("Got stream with constraints:", constraints);
+  console.log('Got stream with constraints:', constraints);
   console.log(`Using video device: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 }
 
 function handleError(error) {
-  if (error.name === "ConstraintNotSatisfiedError") {
+  if (error.name === 'ConstraintNotSatisfiedError') {
     const v = constraints.video;
     errorMsg(
       `The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`
     );
-  } else if (error.name === "PermissionDeniedError") {
+  } else if (error.name === 'PermissionDeniedError') {
     errorMsg(
-      "Permissions have not been granted to use your camera and " +
-        "microphone, you need to allow the page access to your devices in " +
-        "order for the demo to work."
+      'Permissions have not been granted to use your camera and ' +
+        'microphone, you need to allow the page access to your devices in ' +
+        'order for the demo to work.'
     );
   }
   errorMsg(`getUserMedia error: ${error.name}`, error);
 }
 
 function errorMsg(msg, error) {
-  const errorElement = document.querySelector("#errorMsg");
+  const errorElement = document.querySelector('#errorMsg');
   errorElement.innerHTML += `<p>${msg}</p>`;
-  if (typeof error !== "undefined") {
+  if (typeof error !== 'undefined') {
     console.error(error);
   }
 }

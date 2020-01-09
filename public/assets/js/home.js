@@ -35,13 +35,14 @@ $(document).ready(function() {
   const renderPosts = async () => {
     const allPosts = await getPosts();
     console.log(allPosts);
-    for (const { comment, User } of allPosts) {
+    for (const { comment, image, User } of allPosts) {
       $('#postWall').append(`
       <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
       <div>${User.userName}</div>
       <img
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         height="450" width="500"></img>
+      <div>${image}</div>
       <div>
         <i class="fas fa-heart mt-10" style="color:slategray;"></i>
         <i class="fas fa-comment ml-5" style="color:slategray;"></i>

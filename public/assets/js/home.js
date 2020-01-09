@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
   // Variable to hold our posts
   let posts;
 
@@ -14,22 +14,41 @@ $(function() {
   else {
     getPosts();
   }
-
-  function getPosts(user) {
-    userId = user || "";
-    if (userId) {
-      userId = `/?user_id=${userId}`;
+  //Renders scoreboard
+  const renderScoreboard = async () => {
+    const allPosts = await getPosts();
+    const scoreboard = {};
+    //Loops through all the posts and checks to see if they exist.  If they do, then it adds the count by one
+    for (let i = 0; i < allPosts.length; i++) {
+      let userId = allPosts[i];
+      scoreboard[userId.User.userName] = scoreboard[userId.User.userName]
+        ? scoreboard[userId.User.userName] + 1
+        : 1;
     }
-    $.get("/api/posts" + userId, function(data) {
-      console.log("Posts", data);
-      posts = data;
-      if (!posts || !posts.length) {
-        displayEmpty(user);
-      } else {
-        // initializeRows();
+    console.log(scoreboard);
+
+
+    //Convert object into array of key/value pairs
+    const scoreboardArray = Object.entries(scoreboard);
+    for (const [username, score] of scoreboardArray) {
+      $('#scoreboard').append(`<div> ${username} : ${score} </div>`);
+    }
+  };
+
+  //Get all posts (optionally through url Query) and returns as promise
+  function getPosts(user) {
+    return new Promise((resolve, reject) => {
+      userId = user || '';
+      if (userId) {
+        userId = `/?user_id=${userId}`;
       }
+      $.get('/api/post' + userId, function(data) {
+        resolve(data);
+      });
     });
   }
+
+  renderScoreboard();
 });
 
 $(document).ready(function() {

@@ -59,22 +59,25 @@ $(() => {
     });
   });
 
-  function signInIndex() {
-    location.assign('/login');
-  }
-
   $('#goToProfile').on('click', () => {
     let nextPage = `/profile?user_id=${userId}`;
     location.assign(nextPage);
   });
 });
 
-$(document).ready(function(){
-  $('#login-trigger').click(function(){
-    $(this).next('#login-content').slideToggle();
-    
+$(document).ready(function() {
+  $('#login-trigger').click(function() {
+    $(this)
+      .next('#login-content')
+      .slideToggle();
 
-    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
-      else $(this).find('span').html('&#x25BC;')
-    })
+    if ($(this).hasClass('active'))
+      $(this)
+        .find('span')
+        .html('&#x25B2;');
+    else
+      $(this)
+        .find('span')
+        .html('&#x25BC;');
+  });
 });

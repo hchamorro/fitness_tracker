@@ -43,8 +43,6 @@ router.post('/api/user_info', (req, res) => {
 router.put('/api/user_info', (req, res) => {
   db.PersonalInfo.update(
     {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
       venmo: req.body.venmo
     },
     {

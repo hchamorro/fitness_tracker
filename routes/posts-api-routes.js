@@ -3,14 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 
-//GET all posts from ALL users
-// router.get('/api/post', (req, res) => {
-//   db.Post.findAll({}).then(result => {
-//     res.json(result);
-//   });
-// });
-
-//Get ALL posts based off query
+// Get ALL posts based off query
 router.get('/api/post', (req, res) => {
   console.log('contact!');
   let query = {};
@@ -21,7 +14,8 @@ router.get('/api/post', (req, res) => {
 
   // 1. Add a join here to include all of the Users to these posts
   db.Post.findAll({
-    where: query
+    where: query,
+    include: [db.User]
   }).then(function(results) {
     res.json(results);
   });

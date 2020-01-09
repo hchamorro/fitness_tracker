@@ -6,8 +6,8 @@ $(function() {
   // Looks for a query param in the url for user_id
   const url = window.location.search;
   let userId;
-  if (url.indexOf('?user_id=') !== -1) {
-    userId = url.split('=')[1];
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
     getPosts(userId);
   }
   // If there's no userId we just get all posts as usual
@@ -16,12 +16,12 @@ $(function() {
   }
 
   function getPosts(user) {
-    userId = user || '';
+    userId = user || "";
     if (userId) {
       userId = `/?user_id=${userId}`;
     }
-    $.get('/api/posts' + userId, function(data) {
-      console.log('Posts', data);
+    $.get("/api/posts" + userId, function(data) {
+      console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
         displayEmpty(user);
@@ -32,33 +32,33 @@ $(function() {
   }
 });
 
-document.onload = function() {
+$(document).ready(function() {
   // Get the modal
-  var modal = document.getElementById('myModal');
+  var modal = document.getElementById("myModal");
 
   // Get the button that opens the modal
-  var modBtn = document.getElementById('popupUser');
+  var modBtn = document.getElementById("popupUser");
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName('close')[0];
+  var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on the button, open the modal
   modBtn.onclick = function() {
-    modal.style.display = 'block';
+    modal.style.display = "block";
   };
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-    modal.style.display = 'none';
+    modal.style.display = "none";
   };
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = 'none';
+      modal.style.display = "none";
     }
   };
-};
+});
 
 // VIDEO
 // Put variables in global scope to make them available to the browser console.
@@ -68,34 +68,34 @@ const constraints = (window.constraints = {
 });
 
 function handleSuccess(stream) {
-  const video = document.querySelector('video');
+  const video = document.querySelector("video");
   const videoTracks = stream.getVideoTracks();
-  console.log('Got stream with constraints:', constraints);
+  console.log("Got stream with constraints:", constraints);
   console.log(`Using video device: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 }
 
 function handleError(error) {
-  if (error.name === 'ConstraintNotSatisfiedError') {
+  if (error.name === "ConstraintNotSatisfiedError") {
     const v = constraints.video;
     errorMsg(
       `The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`
     );
-  } else if (error.name === 'PermissionDeniedError') {
+  } else if (error.name === "PermissionDeniedError") {
     errorMsg(
-      'Permissions have not been granted to use your camera and ' +
-        'microphone, you need to allow the page access to your devices in ' +
-        'order for the demo to work.'
+      "Permissions have not been granted to use your camera and " +
+        "microphone, you need to allow the page access to your devices in " +
+        "order for the demo to work."
     );
   }
   errorMsg(`getUserMedia error: ${error.name}`, error);
 }
 
 function errorMsg(msg, error) {
-  const errorElement = document.querySelector('#errorMsg');
+  const errorElement = document.querySelector("#errorMsg");
   errorElement.innerHTML += `<p>${msg}</p>`;
-  if (typeof error !== 'undefined') {
+  if (typeof error !== "undefined") {
     console.error(error);
   }
 }
@@ -109,5 +109,3 @@ async function init(e) {
     handleError(e);
   }
 }
-
-

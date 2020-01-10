@@ -58,9 +58,8 @@ router.post('/api/user', upload.single('userImage'), (req, res) => {
         message: 'user name already exists'
       });
     } else {
-      var salt = bcrypt.genSaltSync(10);
-      var hash = bcrypt.hashSync('bacon', salt);
-
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(req.body.password, salt);
       db.User.create({
         userName: req.body.userName,
         email: req.body.email,
@@ -107,21 +106,13 @@ router.post('/login', function(req, res) {
       userName: req.body.userName
     }
   }).then(user => {
-    console.log(JSON.stringify(user));
-    console.log('the passord on page  :', req.body.password, '*****');
-    console.log('*****the user db password  :', user.password);
     let hash = user.password;
-
-    // const trupaswrd = bcrypt.compareSync(req.body.password, hash); // true
-    // const flsepswrd = bcrypt.compareSync('not_bacon', hash); // false
-
-    // console.log('******* tuue :', trupaswrd);
 
     bcrypt.compare(`${req.body.password}`, hash).then(result => {
       // res === true
       console.log('hello world', result);
-      //need to fix result ********************************
       if (result) {
+        console.log('we did it!');
         const token = jwt.sign(
           {
             user: user.userName,

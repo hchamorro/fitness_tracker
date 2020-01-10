@@ -113,8 +113,8 @@ $(document).ready(function() {
         <label class="profile-labels">
           Venmo: ${venmo}
         </label>
+    </div>
 
-    </div>    
     <div class= "mt-30">
         <img
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
@@ -128,11 +128,12 @@ $(document).ready(function() {
   function getProfile(user) {
     return new Promise((resolve, reject) => {
       userId = user || '';
+      console.log(userId);
       if (userId) {
         userId = `/?user_id=${userId}`;
       }
       $.get('/api/user_info/' + userId, function(data) {
-        resolve(data);
+        resolve([data]);
       });
     });
   }

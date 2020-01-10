@@ -81,7 +81,7 @@ $(document).ready(function() {
       data: info
     }).then(function() {
       let nextPage = `/home?user_id=${userId}`;
-      // location.assign(nextPage);
+      location.assign(nextPage);
     });
   }
 });

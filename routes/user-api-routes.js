@@ -2,6 +2,8 @@ const db = require('../models');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
+const jwt = require('jsonwebtoken');
+
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, './uploads/');
@@ -56,23 +58,17 @@ router.post('/api/user', upload.single('userImage'), (req, res) => {
         message: 'user name already exists'
       });
     } else {
-      bcrypt.hash(req.body.password, 8, (err, hash) => {
-        console.log(hash);
-        if (err) {
-          return res.status(500).json({
-            error: err
-          });
-        } else {
-          db.User.create({
-            userName: req.body.userName,
-            email: req.body.email,
-            password: hash
-            // userImage: req.file.path
-          }).then(result => {
-            console.log('1 entry successfully added');
-            res.json(result);
-          });
-        }
+      var salt = bcrypt.genSaltSync(10);
+      var hash = bcrypt.hashSync('bacon', salt);
+
+      db.User.create({
+        userName: req.body.userName,
+        email: req.body.email,
+        password: hash
+        // userImage: req.file.path
+      }).then(result => {
+        console.log('1 entry successfully added');
+        res.json(result);
       });
     }
   });
@@ -102,6 +98,51 @@ router.put('/api/user', (req, res) => {
   ).then(result => {
     console.log('1 entry edited successfully');
     res.json(result);
+  });
+});
+
+router.post('/login', function(req, res) {
+  db.User.findOne({
+    where: {
+      userName: req.body.userName
+    }
+  }).then(user => {
+    console.log(JSON.stringify(user));
+    console.log('the passord on page  :', req.body.password, '*****');
+    console.log('*****the user db password  :', user.password);
+    let hash = user.password;
+
+    // const trupaswrd = bcrypt.compareSync(req.body.password, hash); // true
+    // const flsepswrd = bcrypt.compareSync('not_bacon', hash); // false
+
+    // console.log('******* tuue :', trupaswrd);
+
+    bcrypt.compare(`${req.body.password}`, hash).then(result => {
+      // res === true
+      console.log('hello world', result);
+      //need to fix result ********************************
+      if (result) {
+        const token = jwt.sign(
+          {
+            user: user.userName,
+            userId: user.id
+          },
+          //key  make procees process.env.JWT_KEY
+          'ftbrdky',
+          {
+            expiresIn: '1h'
+          }
+        );
+        return res.status(200).json({
+          message: 'Auth successful',
+          token: token
+        });
+      } else {
+        return res.status(401).json({
+          message: 'Auth Fail'
+        });
+      }
+    });
   });
 });
 

@@ -6,8 +6,8 @@
 // =============================================================
 // const path = require("path");
 const express = require('express');
-
 const router = express.Router();
+const checkAuth = require('./middleware/check-auth');
 // Routes
 // =============================================================
 // module.exports = function(app) {
@@ -24,6 +24,10 @@ router.get('/', function(req, res) {
 router.get('/profile', function(req, res) {
   res.render('profile');
 });
+
+// router.get('/home', checkAuth, function(req, res) {
+//   res.render('home');
+// });
 
 router.get('/home', function(req, res) {
   res.render('home');

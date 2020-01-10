@@ -33,6 +33,11 @@ router.post('/api/user_info', (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     venmo: req.body.payment,
+    height: req.body.height,
+    weight: req.body.height,
+    dob: req.body.DOB,
+    gender: req.body.gender,
+    userImage: req.body.profilePicture,
     UserId: req.body.userId
   }).then(result => {
     console.log('1 entry successfully added');
@@ -41,9 +46,16 @@ router.post('/api/user_info', (req, res) => {
 });
 
 router.put('/api/user_info', (req, res) => {
+  console.log('************', req.body);
   db.PersonalInfo.update(
     {
-      venmo: req.body.venmo
+      venmo: req.body.venmo,
+      height: req.body.height,
+      weight: req.body.weight,
+      DOB: req.body.DOB,
+      gender: req.body.gender,
+      userImage: req.body.userImage,
+      UserId: req.body.userId
     },
     {
       where: {

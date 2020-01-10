@@ -15,26 +15,26 @@
       </div>
       <div class="col-xs-3-4 height-100">
         <div class="frow justify-end items-center height-100">
-           <nav>
+          <nav>
             <ul>
-            <li id="login">
-              <a id="login-trigger">
-               Log in
-              </a>
-              <div id="login-content">
-              <form>
-                <fieldset class="inputs">
-                  <input id="username" placeholder="Username" required>
-                  <input id="password"placeholder="Password"required>
-                </fieldset>
-                <fieldset>
-                  <button id="submitLogin" class="submit">Log In</button>
-                </fieldset>
-              </form>
-              </div>
-            </li>
+              <li id="login">
+                <a id="login-trigger">
+                  Log in
+                </a>
+                <div id="login-content">
+                  <form>
+                    <fieldset class="inputs">
+                      <input id="username" placeholder="Username" required>
+                      <input id="password" placeholder="Password" required>
+                    </fieldset>
+                    <fieldset>
+                      <button id="submitLogin" class="submit">Log In</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </li>
             </ul>
-            </nav>
+          </nav>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
   {{!-- <a class="mr-25" onclick="signInIndex()">
     Login
   </a> --}}
-  
+
   <main class="frow-container mt-20">
     <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
     <h3 class="frow">
@@ -53,9 +53,9 @@
     <!-- see above message for details  -->
 
     <div class="frow mt-50 sign-up">
-       <div class="mt-20 top-font">Sign up for free today!</div>
+      <div class="mt-20 top-font">Sign up for free today!</div>
       <div class="frow-container mt-30">
-        <form novalidate="novalidate" id="userForm">
+        <form novalidate="novalidate" id="userForm" style="background-color: white;">
           <div class="frow gutters">
             <div class="col-md-1-2">
               <input type="text" maxlength="100" required="required" name="firstName" />
@@ -75,13 +75,13 @@
             </div>
           </div>
           <div class="frow gutters">
-          <div class="col-md-1-2">
-            <input type="text" maxlength="100" required="required" name="userName" id="userName" />
-            <label>User Name</label>
-            <div id="error-user-name" class="error" hidden>
-              This field is required
+            <div class="col-md-1-2">
+              <input type="text" maxlength="100" required="required" name="userName" id="userName" />
+              <label>User Name</label>
+              <div id="error-user-name" class="error" hidden>
+                This field is required
+              </div>
             </div>
-          </div>
           </div>
           <div class="frow gutters">
             <div class="col-md-1-2">
@@ -112,13 +112,13 @@
           </div>
         </form>
       </div>
-  </div>
+    </div>
 
-<div class="frow mt-100 card-icons">
-  <div class="col-md-1-3"><i class="fas fa-3x fa-dumbbell"></i></i></div>
-   <div class="col-md-1-3"><i class="fas fa-3x fa-user-friends"></i></div>
-    <div class="col-md-1-3"><i class="fas fa-3x fa-dollar-sign"></i></div>
-</div>
+    <div class="frow mt-100 card-icons">
+      <div class="col-md-1-3"><i class="fas fa-3x fa-dumbbell"></i></i></div>
+      <div class="col-md-1-3"><i class="fas fa-3x fa-user-friends"></i></div>
+      <div class="col-md-1-3"><i class="fas fa-3x fa-dollar-sign"></i></div>
+    </div>
 
 
     <div class="frow">
@@ -129,14 +129,14 @@
       <div class="col-md-1-4 frow shadow-dark justify-between card-one">
         <div class="card-header">Post your workouts.</div>
         <p>Share your workouts with your friends and the FitBOARD community.</p>
-      </div>  
+      </div>
       <div class="col-md-1-4 frow shadow-dark justify-between card-two ml-30">
         <div class="card-header">Create a Competition.</div>
         <p>Create a friendly competition and see who works out more. </p>
       </div>
       <div class="col-md-1-4 frow shadow-dark justify-between card-three ml-30">
         <div class="card-header">Win some money.</div>
-       <p>Winner takes home the money (and bragging rights).</p>
+        <p>Winner takes home the money (and bragging rights).</p>
       </div>
     </div>
   </main>

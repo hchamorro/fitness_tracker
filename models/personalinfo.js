@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const PersonalInfo = sequelize.define("PersonalInfo", {
+  const PersonalInfo = sequelize.define('PersonalInfo', {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -14,12 +14,39 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
+    height: {
+      type: DataTypes.INTEGER,
+      allowNull: !false,
+      validate: {
+        len: [1, 3]
+      }
+    },
+    weight: {
+      type: DataTypes.INTEGER,
+      allowNull: !false,
+      validate: {
+        len: [1, 3]
+      }
+    },
+    DOB: {
+      type: DataTypes.DATEONLY,
+      allowNull: !false
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+
     venmo: {
       type: DataTypes.STRING,
       allowNull: !false,
       validate: {
         len: [1]
       }
+    },
+    userImage: {
+      type: DataTypes.TEXT,
+      allowNull: true
     }
   });
 

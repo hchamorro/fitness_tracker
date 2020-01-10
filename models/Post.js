@@ -4,11 +4,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1, 300]
+        len: [1, 400]
       }
     },
     image: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT,
+      allowNull: true
     }
   });
 

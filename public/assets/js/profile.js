@@ -84,4 +84,27 @@ $(document).ready(function() {
       location.assign(nextPage);
     });
   }
+
+
+  // GET PROFILE INFO
+
+  const renderProfile = async () => {
+    const profileInfo = await getProfile();
+    console.log(profileInfo);
+
+  };
+
+  function getProfile(user) {
+    return new Promise((resolve, reject) => {
+      userId = user || '';
+      if (userId) {
+        userId = `/?user_id=${userId}`;
+      }
+      $.get('/api/user_info/' + userId, function(data) {
+        resolve(data);
+      });
+    });
+  }
+
+  renderProfile();
 });

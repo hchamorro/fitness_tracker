@@ -190,7 +190,7 @@ nav ul {
   list-style: none;
   position: relative;
   float: right;
-  background: white ;
+  background: #f8f8f8 ;
   font-family: "Roboto", sans-serif;
 }
 
@@ -349,4 +349,21 @@ nav #login-content {
 
 .card-icons{
   text-align: center;
+}
+
+.container{
+  display:flex;
+  justify-content: space-between;
+}
+
+.profile-pic{
+  border-radius: 25px;
+}
+
+.profile-header{
+  font-size: 30px;
+}
+
+.profile-labels{
+  font-size: 25px;
 }

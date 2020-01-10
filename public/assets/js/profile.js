@@ -45,24 +45,24 @@ $(document).ready(function() {
     // Constructing a userInfo object to hand to the database
     let userInfo = {
       height: $('#userHeight').val(),
-      height: $('#userWeight').val(),
+      weight: $('#userWeight').val(),
       DOB: $('#date-age').val(),
       gender: $('#gender option:selected').text(),
       venmo: $('#pay-source')
         .val()
         .trim(),
-      profpix: profilePicture,
+      userImage: profilePicture,
       userId: userId
     };
     console.log('***********', userInfo);
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post
-    if (updating) {
-      userInfo.userId = userId;
-      updateInfo(userInfo);
-    } else {
-      submitInfo(userInfo);
-    }
+    // if (updating) {
+    //   userInfo.userId = userId;
+    //   updateInfo(userInfo);
+    // } else {
+    //   submitInfo(userInfo);
+    // }
     updateInfo(userInfo);
   }
 

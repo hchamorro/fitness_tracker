@@ -43,7 +43,6 @@ $(document).ready(function() {
         .val()
         .trim()
     };
-
     $.ajax('/api/user', {
       type: 'POST',
       data: newUser
@@ -57,11 +56,6 @@ $(document).ready(function() {
         location.assign(nextPage);
       });
     });
-  });
-
-  $('#goToProfile').on('click', () => {
-    let nextPage = `/profile?user_id=${userId}`;
-    location.assign(nextPage);
   });
 });
 

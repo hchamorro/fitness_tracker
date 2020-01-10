@@ -84,4 +84,59 @@ $(document).ready(function() {
       location.assign(nextPage);
     });
   }
+
+
+  // GET PROFILE INFO
+
+  const renderProfile = async () => {
+    const profileInfo = await getProfile();
+    console.log(profileInfo);
+    for (const { firstName, lastName, height, weight, DOB, gender, venmo } of profileInfo) {
+      $('#profileInfo').append(`
+      <div>
+      <div class="profile-header">Personal Information</div>
+        <label class="pt-15 mt-20 profile-labels">
+          Name: ${firstName} ${lastName}
+        </label>
+        <label class="profile-labels">
+          Height: ${height}
+        </label>
+        <label class="profile-labels">
+          Weight: ${weight}
+        </label>
+        <label class="profile-labels">
+          DOB: ${DOB}
+        </label>
+        <label class="profile-labels">
+          Gender: ${gender}
+        </label>
+        <label class="profile-labels">
+          Venmo: ${venmo}
+        </label>
+    </div>
+
+    <div class= "mt-30">
+        <img
+        src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        height="180" width="180" class="profile-pic"></img>
+        <label>Username</label>
+        <label><i class="fas fa-envelope">:</i></label>
+    </div>`
+      )}
+  };
+
+  function getProfile(user) {
+    return new Promise((resolve, reject) => {
+      userId = user || '';
+      console.log(userId);
+      if (userId) {
+        userId = `/?user_id=${userId}`;
+      }
+      $.get('/api/user_info/' + userId, function(data) {
+        resolve([data]);
+      });
+    });
+  }
+
+  renderProfile();
 });

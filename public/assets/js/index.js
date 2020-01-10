@@ -1,4 +1,4 @@
-$(() => {
+$(document).ready(function() {
   const inputs = document.querySelectorAll('input');
   const url = window.location.search;
   let userId;

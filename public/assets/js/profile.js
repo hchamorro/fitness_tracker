@@ -46,7 +46,7 @@ $(document).ready(function() {
       preview.hidden = false;
     }
 
-    console.log('profilepix', profilePicture);
+    // console.log('profilepix', profilePicture);
 
     // Constructing a userInfo object to hand to the database
     let userInfo = {

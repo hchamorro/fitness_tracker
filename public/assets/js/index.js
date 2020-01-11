@@ -69,14 +69,6 @@ $(document).ready(function() {
     );
   });
 
-  $("#indexScroll").click(function() {
-    $("html,body").animate(
-      {
-        scrollTop: $(".sign-up").offset().top
-      },
-      "slow"
-    );
-  });
 });
 
 // $(document).ready(function() {

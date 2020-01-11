@@ -16,6 +16,7 @@ $(document).ready(function() {
     location.assign(`/`);
   });
 
+
   $("#nav-profile").click(function() {
     location.assign(`/profile`);
   });

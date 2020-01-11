@@ -9,10 +9,25 @@ router.get('/api/user_info', function(req, res) {
     query.userId = req.query.user_id;
   }
   // 1. Add a join here to include all of the User to the personal Info
-  db.PersonalInfo.findOne({
+  db.PersonalInfo.findAll({
     where: query,
     include: [db.User]
   }).then(function(result) {
+    res.json(result);
+    // console.log(result);
+  });
+});
+
+//Find user info based off ID
+router.get('/api/user_info/:id', (req, res) => {
+  let query = {};
+  if (req.query.user_id) {
+    query.userId = req.query.user_id;
+  }
+  db.PersonalInfo.findOne({
+    where: query,
+    include: [db.User]
+  }).then(result => {
     res.json(result);
     console.log(result);
   });

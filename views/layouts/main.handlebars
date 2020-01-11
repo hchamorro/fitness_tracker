@@ -11,13 +11,54 @@
   <script src="https://kit.fontawesome.com/0270abbd8e.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/assets/js/capture.js"></script>
-  <script src="/assets/js/hamburger.js"></script>
+  <script src="/assets/js/nav.js"></script>
   <title>Fitness Tracker!</title>
   
 
 </head>
 
 <body>
+ <div class="header">
+  <div class="frow nowrap row-between height-100">
+    <div id="logo" class="shrink-0">
+      <span class="color-block-landing"></span>
+      <div class="frow">
+        <a class="logo" id="go-home-click">FitBOARD</a>
+      </div>
+    </div>
+    <div class="nav width-100">
+      <div class="frow row-end items-center height-100 width-100">
+        <div id="mobile-links" class="frow items-center grow-1" hidden>
+          <a class="ml-25" id="nav-sign-up">Sign Up</a>
+          <a class="ml-25" id="nav-profile">Profile</a>
+          <a class="ml-25" id="login-trigger">Login</a>
+        </div>
+        <button class="collaps-hamburger-menu visible-xs" type="button" onclick="hamburgerDisplayLink()" >
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3-4 height-100">
+    <div class="frow justify-end items-center height-100">
+      <nav>
+        <div id="login-content">
+          <form>
+            <fieldset class="inputs">
+              <input id="headerUsername" placeholder="Username" required>
+              <input id="headerPassword" placeholder="Password" required>
+            </fieldset>
+            <fieldset>
+              <button id="submitLogin" class="submit">Log In</button>
+            </fieldset>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
   {{{ body }}}
 </body>
 

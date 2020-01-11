@@ -2,7 +2,7 @@
 
 
 <body>
-  <div class="header">
+  {{!-- <div class="header">
     <div class="frow height-100">
       <div class="col-xs-1-4">
         <span class="color-block-landing"></span>
@@ -35,18 +35,34 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   {{!-- <a class="mr-25" onclick="signInIndex()">
     Login
   </a> --}}
 
-  <main class="frow-container mt-20">
+  <main class="frow-container">
     <!-- can be kept as divs or h's pending on what we want to do, just messing with different styles -->
-    <h3 class="frow">
-      <div class="slogan-font">JOIN. COMPETE. WIN.</div>
-    </h3>
-    <div class="scroll-down"></div>
+    {{!-- <h3 class="frow">
+      <div class="slogan-font home-title">JOIN. COMPETE. WIN.</div>
+    </h3> --}}
+    <p class="popout">
+	    <span>J</span>
+	    <span>O</span>
+	    <span>I</span>
+	    <span>N.</span><br>
+	    <span>C</span>
+	    <span>O</span>
+	    <span>M</span>
+	    <span>P</span>
+	    <span>E</span>
+	    <span>T</span>
+	    <span>E.</span><br>
+      <span>W</span>
+	    <span>I</span>
+	    <span>N.</span>
+    </p>
+    <div class="scroll-down" id="indexScroll"></div>
     <!-- see above message for details  -->
 
     <div class="frow mt-50 sign-up">
@@ -118,22 +134,19 @@
     </div>
 
 
-    <div class="frow">
-      <div class="frow mt-1"></div>
-      <div id="chart_div"></div>
-    </div>
-    <div class="frow mt-5">
-      <div class="col-md-1-4 frow shadow-dark justify-between card-one">
+    <div class="cards-container mt-5">
+      <div class="child card-one">
         <div class="card-header">Post your workouts.</div>
         <p>Share your workouts with your friends and the FitBOARD community.</p>
       </div>
-      <div class="col-md-1-4 frow shadow-dark justify-between card-two ml-30">
+      <div class="child card-two ml-30">
         <div class="card-header">Create a Competition.</div>
         <p>Create a friendly competition and see who works out more. </p>
       </div>
-      <div class="col-md-1-4 frow shadow-dark justify-between card-three ml-30">
+      <div class="child card-three ml-30">
         <div class="card-header">Win some money.</div>
         <p>Winner takes home the money (and bragging rights).</p>
       </div>
     </div>
-  </main>
+
+</main>

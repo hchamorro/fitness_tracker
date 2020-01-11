@@ -18,7 +18,6 @@ $(document).ready(function() {
       console.log(userPost);
 
       $.post('/api/post', userPost, () => {
-        alert(JSON.stringify(userPost));
         location.reload();
       });
     });

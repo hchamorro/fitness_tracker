@@ -88,7 +88,7 @@ $(document).ready(function() {
       url: '/api/user_info',
       data: info
     }).then(function() {
-      let nextPage = `/home?user_id=${userId}`;
+      let nextPage = `/home${userId}`;
       location.assign(nextPage);
     });
   }

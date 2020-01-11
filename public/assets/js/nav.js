@@ -1,30 +1,26 @@
 console.log("nav");
-
-const hamburgerDisplayLink = () => {
-  document.getElementById("logo").hidden = !document.getElementById("logo")
-    .hidden;
-  document.getElementById("mobile-links").hidden = !document.getElementById(
-    "mobile-links"
-  ).hidden;
-};
-
-const signInIndex = () => {
-  document.getElementById("signin-showing").hidden = false;
-  console.log("signinindex");
-};
-
 $(document).ready(function() {
-  $("#login-trigger").click(function() {
-    console.log("click");
-    $("#login-content").slideToggle();
+  const hamburgerDisplayLink = () => {
+    document.getElementById("logo").hidden = !document.getElementById("logo")
+      .hidden;
+    document.getElementById("mobile-links").hidden = !document.getElementById(
+      "mobile-links"
+    ).hidden;
+  };
 
-    // if ($(this).hasClass("active"))
-    //   $(this)
-    //     .find("span")
-    //     .html("&#x25B2;");
-    // else
-    //   $(this)
-    //     .find("span")
-    //     .html("&#x25BC;");
+  const signInIndex = () => {
+    document.getElementById("signin-showing").hidden = false;
+  };
+
+  $("#go-home-click").click(function() {
+    location.assign(`/`);
+  });
+
+  $("#nav-profile").click(function() {
+    location.assign(`/profile`);
+  });
+
+  $("#login-trigger").click(function() {
+    $("#login-content").slideToggle();
   });
 });

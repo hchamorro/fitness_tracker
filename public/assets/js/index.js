@@ -74,4 +74,14 @@ $(document).ready(function() {
         .find('span')
         .html('&#x25BC;');
   });
+
+  $("#indexScroll").click(function() {
+    $("html,body").animate(
+      {
+        scrollTop: $(".sign-up").offset().top
+      },
+      "slow"
+    );
+  });
+  
 });

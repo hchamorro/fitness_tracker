@@ -5,7 +5,6 @@ const router = express.Router();
 
 // Get ALL posts based off query
 router.get('/api/post', (req, res) => {
-  console.log('contact!');
   let query = {};
   if (req.query.user_id) {
     query.UserId = req.query.user_id;

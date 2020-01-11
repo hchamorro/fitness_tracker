@@ -108,32 +108,46 @@ router.post('/login', function(req, res) {
   }).then(user => {
     let hash = user.password;
 
-    bcrypt.compare(`${req.body.password}`, hash).then(result => {
-      // res === true
-      console.log('hello world', result);
-      if (result) {
-        console.log('we did it!');
-        const token = jwt.sign(
-          {
-            user: user.userName,
-            userId: user.id
-          },
-          //key  make procees process.env.JWT_KEY
-          'ftbrdky',
-          {
-            expiresIn: '1h'
+    bcrypt
+      .compare(`${req.body.password}`, hash)
+      .then(result => {
+        // res === true
+        console.log('hello world', result);
+        if (result) {
+          console.log('we did it!');
+          const token = jwt.sign(
+            {
+              user: user.userName,
+              userId: user.id
+            },
+            //key  make procees process.env.JWT_KEY
+            'ftbrdky',
+            {
+              expiresIn: '1h'
+            }
+          );
+          const url = window.location.search;
+          if (url.indexOf('?user_id=') !== -1) {
+            userId = url.split('=')[1];
           }
-        );
-        return res.status(200).json({
-          message: 'Auth successful',
-          token: token
+          let nextPage = `/home?user_id=${userId}?fttkn=${token}`;
+          location.assign(nextPage);
+          return res.status(200).json({
+            message: 'Auth successful',
+            token: token
+          });
+        } else {
+          return res.status(401).json({
+            message: 'Auth Fail'
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
         });
-      } else {
-        return res.status(401).json({
-          message: 'Auth Fail'
-        });
-      }
-    });
+      });
   });
 });
 

@@ -9,7 +9,6 @@ router.get('/api/post', (req, res) => {
   if (req.query.user_id) {
     query.UserId = req.query.user_id;
   }
-  console.log(query);
 
   // 1. Add a join here to include all of the Users to these posts
   db.Post.findAll({

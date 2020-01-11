@@ -9,12 +9,14 @@ $(document).ready(function() {
   let userId;
   if (url.indexOf('?user_id=') !== -1) {
     userId = url.split('=')[1];
-    getPosts(userId);
   }
-  // If there's no userId we just get all posts as usual
-  else {
-    getPosts();
-  }
+
+  const displayName = async queryId => {
+    const personalInfo = await getPersonalInfo(queryId);
+    $('#js-name').html(
+      `Hi ${personalInfo[0].firstName} ${personalInfo[0].lastName}!`
+    );
+  };
   //Renders scoreboard
   const renderScoreboard = async () => {
     const allPosts = await getPosts();
@@ -35,7 +37,7 @@ $(document).ready(function() {
 
   const renderPosts = async () => {
     const allPosts = await getPosts();
-    console.log(allPosts);
+
     for (const { comment, image, User } of allPosts) {
       $('#postWall').prepend(`
       <div class="col-md-3-4 col-xs-3-4 mt-30 mb-30">
@@ -71,6 +73,19 @@ $(document).ready(function() {
     });
   }
 
+  function getPersonalInfo(user) {
+    return new Promise((resolve, reject) => {
+      userId = user || '';
+      if (userId) {
+        userId = `/?user_id=${userId}`;
+      }
+      $.get('/api/user_info' + userId, function(data) {
+        resolve(data);
+      });
+    });
+  }
+
+  displayName(userId);
   renderScoreboard();
   renderPosts();
 });

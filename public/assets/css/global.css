@@ -19,6 +19,10 @@ body {
   z-index: 100;
 }
 
+a.logo:hover {
+  text-decoration: none;
+}
+
 .user-inputs {
   color: rgb(100, 97, 97);
   margin-top: 80px;
@@ -77,22 +81,19 @@ button.my-custom-button {
   margin: 0;
 }
 
-#mobile-hamburger-menu div,
-#collaps-hamburger-menu div {
+.collaps-hamburger-menu div {
   width: 22px;
   height: 4px;
   background-color: #777;
   margin-bottom: 4px;
 }
 
-#mobile-hamburger-menu,
-#collaps-hamburger-menu {
+.collaps-hamburger-menu,
+.collaps-hamburger-menu:active,
+.collaps-hamburger-menu:focus,
+.collaps-hamburger-menu:hover {
   border: 0;
   background: none;
-}
-
-.small-nav {
-  font-size: 11px;
 }
 
 .main-wrapper {
@@ -113,19 +114,18 @@ button.my-custom-button {
   position: relative;
 }
 
-.login-btn{
+.login-btn {
   margin: 0 auto;
   display: block;
 }
 
-.login-drop{
+.login-drop {
   z-index: 1000;
   position: fixed;
   width: 20%;
   background-color: rgb(100, 97, 97);
   left: 75%;
 }
-
 
 .back-display {
   background-color: #d3c02f;
@@ -171,8 +171,8 @@ button.my-custom-button {
   max-width: 100%; /* Full width */
   max-height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -203,37 +203,51 @@ button.my-custom-button {
 /* #D3C02F- yellow */
 /* #F2F1F0 gray */
 
-
 /* LOGIN NAVIGATION */
 
-nav ul {
+/* nav ul {
   list-style: none;
   position: relative;
   float: right;
-  background: #f8f8f8 ;
+  background: #f8f8f8;
   font-family: "Roboto", sans-serif;
 }
 
 nav li {
   float: left;
+} */
+
+/* XS */
+@media (max-width: 767px) {
+  #mobile-links {
+    justify-content: space-between;
+  }
+}
+/* SM, MD, LG */
+@media (min-width: 768px) {
+  #mobile-links {
+    justify-content: flex-end;
+  }
+  #mobile-links[hidden] {
+    display: flex !important;
+  }
 }
 
-
 nav #login-trigger:hover,
-nav #login .active,{
+nav #login .active {
   background: #fff;
 }
 
 nav #login-content {
   display: none;
   position: absolute;
-  top: 24px;
+  top: 75px;
   right: 0;
   z-index: 999;
   background: rgb(199, 198, 197);
   background-image: linear-gradient(top, #fff, #eee);
   padding: 8px;
-  box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.9);
   border-radius: 3px 0 3px 3px;
 }
 
@@ -255,7 +269,7 @@ nav #login-content {
 }
 
 .submit {
-  background-color: #F76c6c;
+  background-color: #f76c6c;
   border-radius: 3px;
   border: 1px solid #7e1515;
   height: 30px;
@@ -269,8 +283,8 @@ nav #login-content {
 
 .submit:hover,
 .submit:focus {
-  background-color: #F76c6c;
-  background-image: linear-gradient(top, #F76c6c, #e97171);
+  background-color: #f76c6c;
+  background-image: linear-gradient(top, #f76c6c, #e97171);
 }
 
 .submit:active {
@@ -278,45 +292,42 @@ nav #login-content {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
-
 /* sign up box */
-.sign-up{
+.sign-up {
   background-color: #05386b;
 }
 
-.index-workout{
+.index-workout {
   background-color: rgb(230, 168, 211);
 }
 
-.sign-up-btn{
- background-color:rgb(233, 109, 109);
+.sign-up-btn {
+  background-color: rgb(233, 109, 109);
 }
 
-.top-font{
+.top-font {
   color: white;
   font-size: 1.5em;
 }
 
-.profile-font{
+.profile-font {
   text-align: center;
   font-size: 3.5em;
   margin-top: 20px;
 }
 
-  
-
 /* Scroll bar */
 
 .scroll-down {
-	position: absolute;
-	left: 50%;
-	bottom: 10px;
-	display: block;
-	text-align: center;
-	font-size: 20px;
-	z-index: 100;
-	text-decoration: none;
-	text-shadow: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0;
   width: 30px;
   height: 30px;
   border-bottom: 2px solid black;
@@ -326,27 +337,50 @@ nav #login-content {
   -webkit-transform: translate(-50%, 0%) rotate(45deg);
   -moz-transform: translate(-50%, 0%) rotate(45deg);
   transform: translate(-50%, 0%) rotate(45deg);
-	-webkit-animation: fade_move_down 4s ease-in-out infinite;
-	-moz-animation:    fade_move_down 4s ease-in-out infinite;
-	animation:         fade_move_down 4s ease-in-out infinite;
+  -webkit-animation: fade_move_down 4s ease-in-out infinite;
+  -moz-animation: fade_move_down 4s ease-in-out infinite;
+  animation: fade_move_down 4s ease-in-out infinite;
 }
-
 
 /*animated scroll arrow animation*/
 @-webkit-keyframes fade_move_down {
-  0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  0% {
+    -webkit-transform: translate(0, -10px) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, 10px) rotate(45deg);
+    opacity: 0;
+  }
 }
 @-moz-keyframes fade_move_down {
-  0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  0% {
+    -moz-transform: translate(0, -10px) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translate(0, 10px) rotate(45deg);
+    opacity: 0;
+  }
 }
 @keyframes fade_move_down {
-  0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  0% {
+    transform: translate(0, -10px) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 10px) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 /* .card-one{
@@ -362,29 +396,29 @@ nav #login-content {
   background-color: #376e6f;
 }  */
 
-.card-header{
+.card-header {
   font-size: 2em;
   text-align: center;
 }
 
-.card-icons{
+.card-icons {
   text-align: center;
 }
 
-.container{
-  display:flex;
+.container {
+  display: flex;
   justify-content: space-between;
 }
 
-.profile-pic{
+.profile-pic {
   border-radius: 25px;
 }
 
-.profile-header{
+.profile-header {
   font-size: 30px;
 }
 
-.profile-labels{
+.profile-labels {
   font-size: 25px;
 }
 
@@ -481,6 +515,4 @@ html {
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
-
-
 

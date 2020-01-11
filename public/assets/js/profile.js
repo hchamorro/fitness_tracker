@@ -89,8 +89,8 @@ $(document).ready(function() {
   // GET PROFILE INFO
 
   const renderProfile = async () => {
-    const profileInfo = await getProfile();
-    console.log(profileInfo);
+    const profileInfo = await getProfile(userId);
+    const userInfo = await getUserInfo(userId);
     for (const { firstName, lastName, height, weight, DOB, gender, venmo } of profileInfo) {
       $('#profileInfo').append(`
       <div>
@@ -119,24 +119,36 @@ $(document).ready(function() {
         <img
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         height="180" width="180" class="profile-pic"></img>
-        <label>Username</label>
+        <label>username</label>
         <label><i class="fas fa-envelope">:</i></label>
     </div>`
-      )}
+      )};
   };
 
   function getProfile(user) {
     return new Promise((resolve, reject) => {
       userId = user || '';
-      console.log(userId);
       if (userId) {
         userId = `/?user_id=${userId}`;
       }
-      $.get('/api/user_info/' + userId, function(data) {
-        resolve([data]);
+      $.get('/api/user_info' + userId, function(data) {
+        resolve(data);
       });
     });
   }
+
+  function getUserInfo(user) {
+    return new Promise((resolve, reject) => {
+      userId = user || '';
+      if (userId) {
+        userId = `/?user_id=${userId}`;
+      }
+      $.get('/api/user_info' + userId, function(data) {
+        resolve(data);
+      });
+    });
+  }
+
 
   renderProfile();
 });

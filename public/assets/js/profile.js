@@ -46,6 +46,7 @@ $(document).ready(function() {
       preview.hidden = false;
     }
 
+
     // Constructing a userInfo object to hand to the database
     let userInfo = {
       height: $('#userHeight').val(),

@@ -400,8 +400,6 @@ nav #login-content {
 
 
 
-
-
 html {
   background: white;
 }
@@ -470,6 +468,7 @@ html {
   -webkit-animation: ani 1s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
           animation: ani 1s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
 }
+
 .popout span:nth-last-child(1n) {
   -webkit-animation-delay: -0.1666666667s;
           animation-delay: -0.1666666667s;

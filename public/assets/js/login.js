@@ -6,23 +6,8 @@ $(() => {
     userId = url.split('=')[1];
   }
 
-  inputs.forEach(input => {
-    input.addEventListener('input', () => {
-      const value = input.value.trim();
-      if (!value) {
-        input.classList.add('dirty');
-      } else {
-        input.classList.remove('dirty');
-      }
-    });
-  });
-
   $('#testUserForm').submit(() => {
     event.preventDefault();
-    let submit = true;
-    if ($('[name="userName"]').val() === '') {
-      console.log('error');
-    }
 
     //Add username to database
 

@@ -542,3 +542,31 @@ html {
     font-size: 11vw;
   }
 }
+
+
+.half-circle {
+  z-index:0;
+  position: fixed;
+  right: 0px;
+  top: 290px;
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius:100px;
+  border-bottom-right-radius:10px;
+  border: 10px solid #8ee4af;
+  border-bottom: 100;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bg-color{
+  background: linear-gradient(141deg, lightblue 0%, rgb(126, 182, 201) 65%);
+}
+.score-loc{
+position: fixed;
+right: 60px;
+top: 320px;
+}

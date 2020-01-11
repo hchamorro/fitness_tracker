@@ -38,13 +38,13 @@ $(document).ready(function() {
     console.log(allPosts);
     for (const { comment, image, User } of allPosts) {
       $('#postWall').prepend(`
-      <div class="col-md-3-4 col-xs-3-4">
+      <div class="col-md-3-4 col-xs-3-4 mt-30 mb-30">
       <div class="frow column-center" id='postWall'>
         <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
           <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">${User.username}</div>
           <img
             src="${image}"
-            height="450" width="500"></img>
+            height="350" width="400"></img>
           <div>
             <i class="fas fa-heart mt-10" style="color:slategray;"></i>
             <i class="fas fa-comment ml-5" style="color:slategray;"></i>

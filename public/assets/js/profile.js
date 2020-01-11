@@ -140,7 +140,6 @@ $(document).ready(function() {
   renderProfile();
 
 
-
 $("#updateBtn").click(function() {
   $("html,body").animate(
     {

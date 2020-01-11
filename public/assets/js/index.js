@@ -66,13 +66,24 @@ $(document).ready(function() {
 //       .next("#login-content")
 //       .slideToggle();
 
-//     if ($(this).hasClass("active"))
-//       $(this)
-//         .find("span")
-//         .html("&#x25B2;");
-//     else
-//       $(this)
-//         .find("span")
-//         .html("&#x25BC;");
-//   });
-// });
+    if ($(this).hasClass('active'))
+      $(this)
+        .find('span')
+        .html('&#x25B2;');
+    else
+      $(this)
+        .find('span')
+        .html('&#x25BC;');
+  });
+
+  $("#indexScroll").click(function() {
+    $("html,body").animate(
+      {
+        scrollTop: $(".sign-up").offset().top
+      },
+      "slow"
+    );
+  });
+  
+});
+

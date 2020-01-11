@@ -89,18 +89,11 @@ $(document).ready(function() {
   // GET PROFILE INFO
 
   const renderProfile = async () => {
-    const profileInfo = await getProfile();
+    const profileInfo = await getProfile(userId);
     console.log(profileInfo);
-    for (const {
-      firstName,
-      lastName,
-      height,
-      weight,
-      DOB,
-      gender,
-      venmo
-    } of profileInfo) {
-      $("#profileInfo").append(`
+
+    for (const { firstName, lastName, height, weight, DOB, gender, venmo, User:userName } of profileInfo) {
+      $('#profileInfo').append(`
       <div>
       <div class="profile-header">Personal Information</div>
         <label class="pt-15 mt-20 profile-labels">
@@ -127,24 +120,33 @@ $(document).ready(function() {
         <img
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         height="180" width="180" class="profile-pic"></img>
-        <label>Username</label>
+        <label>${userName}</label>
         <label><i class="fas fa-envelope">:</i></label>
-    </div>`);
-    }
+    </div>`
+      )};
   };
 
   function getProfile(user) {
     return new Promise((resolve, reject) => {
-      userId = user || "";
-      console.log(userId);
+      userId = user || '';
       if (userId) {
         userId = `/?user_id=${userId}`;
       }
-      $.get("/api/user_info/" + userId, function(data) {
-        resolve([data]);
+      $.get('/api/user_info' + userId, function(data) {
+        resolve(data);
       });
     });
   }
 
   renderProfile();
+
+
+$("#updateBtn").click(function() {
+  $("html,body").animate(
+    {
+      scrollTop: $("#userProfileInfo").offset().top
+    },
+    "slow"
+  );
+});
 });

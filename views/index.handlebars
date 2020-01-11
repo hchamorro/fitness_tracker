@@ -31,48 +31,45 @@
     <div class="frow mt-50 sign-up">
       <div class="mt-20 top-font">Sign up for free today!</div>
       <div class="frow-container mt-30">
-        <form novalidate="novalidate" id="userForm">
+        <form novalidate="novalidate" class="user-form" id="userForm">
           <div class="frow gutters">
             <div class="col-md-1-2">
-              <input type="text" maxlength="100" required="required" name="firstName" />
-              <label>First Name</label>
-              <div id="error-first-name" class="error" hidden>
+              <input type="text" maxlength="100" required="required" placeholder="First Name" name="firstName" />
+              <div class="error">
+                This field is required
+              </div>
+              
+            </div>
+          </div>
+          <div class="frow gutters">
+            <div class="col-md-1-2">
+              <input type="text" maxlength="100" required="required" placeholder="Last Name" name="lastName" />
+              <div class="error">
                 This field is required
               </div>
             </div>
           </div>
           <div class="frow gutters">
             <div class="col-md-1-2">
-              <input type="text" maxlength="100" required="required" name="lastName" />
-              <label>Last Name</label>
-              <div id="error--name" class="error" hidden>
+              <input type="text" maxlength="100" required="required" name="userName" placeholder="User Name" id="userName" />
+              <div class="error">
                 This field is required
               </div>
+              <div class="user-exists" id="userNameExists"></div>
             </div>
           </div>
           <div class="frow gutters">
             <div class="col-md-1-2">
-              <input type="text" maxlength="100" required="required" name="userName" id="userName" />
-              <label>User Name</label>
-              <div id="error-user-name" class="error" hidden>
-                This field is required
-              </div>
-            </div>
-          </div>
-          <div class="frow gutters">
-            <div class="col-md-1-2">
-              <input type="text" maxlength="100" required="required" name="email" />
-              <label>Email</label>
-              <div class="error" hidden>
+              <input type="text" maxlength="100" required="required" placeholder="Email" name="email" />
+              <div class="error">
                 This field is required
               </div>
             </div>
           </div>
           <div class="frow gutters">
             <div class="frow col-md-1-2">
-              <input type="password" maxlength="100" required="required" name="password" id="password" />
-              <label>Password</label>
-              <div class="error" hidden>
+              <input type="password" maxlength="100" required="required" name="password" placeholder="Password" id="password" />
+              <div class="error">
                 <p>
                   Log in error:
                 </p>

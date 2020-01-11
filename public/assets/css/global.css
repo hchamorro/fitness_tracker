@@ -146,14 +146,14 @@ button.my-custom-button {
 
 .user-bc {
   background-color: white;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .user-profile-image {
   border-radius: 50%;
 }
 
-.post-username{
+.post-username {
   border-color: black;
   border-width: 1px;
   border-style: solid;
@@ -162,7 +162,7 @@ button.my-custom-button {
   font: bold;
 }
 
-.workout-font{
+.workout-font {
   color: #777;
 }
 
@@ -171,7 +171,9 @@ button.my-custom-button {
   transition: opacity 0.5s;
 }
 
-.dirty + .error {
+.dirty + .error,
+.user-exists {
+  color: red;
   opacity: 1;
 }
 
@@ -265,7 +267,7 @@ nav #login-content {
   border-radius: 3px 0 3px 3px;
 }
 
-input {
+.user-form input {
   background: #f1f1f1;
 }
 
@@ -543,9 +545,8 @@ html {
   }
 }
 
-
 .half-circle {
-  z-index:0;
+  z-index: 0;
   position: fixed;
   right: 0px;
   top: 290px;
@@ -553,8 +554,8 @@ html {
   height: 200px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  border-bottom-left-radius:100px;
-  border-bottom-right-radius:10px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 10px;
   border: 10px solid #8ee4af;
   border-bottom: 100;
   -webkit-box-sizing: border-box;
@@ -562,11 +563,11 @@ html {
   box-sizing: border-box;
 }
 
-.bg-color{
+.bg-color {
   background: linear-gradient(141deg, lightblue 0%, rgb(126, 182, 201) 65%);
 }
-.score-loc{
-position: fixed;
-right: 60px;
-top: 320px;
+.score-loc {
+  position: fixed;
+  right: 60px;
+  top: 320px;
 }

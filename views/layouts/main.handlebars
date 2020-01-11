@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="nav width-100">
-      <div class="frow justify-end height-100 width-100 items-center hidden-xs">
+      {{!-- <div class="frow justify-end height-100 width-100 items-center hidden-xs">
         <a class="ml-25">
           Sign Up
         </a>
@@ -37,14 +37,14 @@
         <a class="ml-25" id="login-trigger">
           Login
         </a>
-      </div>
-      <div class="frow row-end visible-xs items-center height-100 width-100">
-        <div id="mobile-links" class="frow row-around grow-1" hidden>
-          <a>Sign Up</a>
-          <a>Profile</a>
-          <a>Login</a>
+      </div> --}}
+      <div class="frow row-end items-center height-100 width-100">
+        <div id="mobile-links" class="frow items-center grow-1" hidden>
+          <a class="ml-25">Sign Up</a>
+          <a class="ml-25">Profile</a>
+          <a class="ml-25" id="login-trigger">Login</a>
         </div>
-        <button class="collaps-hamburger-menu" type="button" onclick="hamburgerDisplayLink()" >
+        <button class="collaps-hamburger-menu visible-xs" type="button" onclick="hamburgerDisplayLink()" >
           <div></div>
           <div></div>
           <div></div>

@@ -13,20 +13,18 @@ const signInIndex = () => {
   console.log("signinindex");
 };
 
-$("#login-trigger").click(function() {
-  //Do stuff when clicked
+$(document).ready(function() {
+  $("#login-trigger").click(function() {
+    console.log("click");
+    $("#login-content").slideToggle();
 
-  console.log("clicked");
-  $(this)
-    .next("#login-content")
-    .slideToggle();
-
-  if ($(this).hasClass("active"))
-    $(this)
-      .find("span")
-      .html("&#x25B2;");
-  else
-    $(this)
-      .find("span")
-      .html("&#x25BC;");
+    // if ($(this).hasClass("active"))
+    //   $(this)
+    //     .find("span")
+    //     .html("&#x25B2;");
+    // else
+    //   $(this)
+    //     .find("span")
+    //     .html("&#x25BC;");
+  });
 });

@@ -15,7 +15,6 @@ $(document).ready(function() {
     userId = url.split('=')[1];
   }
 
-  alert(userId);
   const base64EncodeFile = file => {
     return new Promise((resolve, reject) => {
       let reader = new FileReader();
@@ -61,34 +60,24 @@ $(document).ready(function() {
       userImage: profilePicture,
       userId: userId
     };
-    console.log('this should be user id', userInfo.userId, '****', userId);
-    console.log('***********', userInfo);
-    // If we're updating a post run updatePost to update a post
-    // Otherwise run submitPost to create a whole new post
-    // if (updating) {
-    //   userInfo.userId = userId;
-    //   updateInfo(userInfo);
-    // } else {
-    //   submitInfo(userInfo);
-    // }
-    updateInfo(userInfo);
-  }
 
-  //   // Submits a new post and brings user to blog page upon completion
-  function submitInfo(info) {
-    $.post('/api/user_info', info, function() {
-      window.location.href = '/';
-    });
+    updateInfo(userInfo);
   }
 
   //   // Update a given post, bring user to the blog page when done
   function updateInfo(info) {
+    const url = window.location.search;
+    let userId;
+    // If we have this section in our url, we pull out the user id from the url  our url
+    if (url.indexOf('?user_id=') !== -1) {
+      userId = url.split('=')[1];
+    }
     $.ajax({
       method: 'PUT',
       url: '/api/user_info',
       data: info
     }).then(function() {
-      let nextPage = `/home${userId}`;
+      let nextPage = `/home?user_id=${userId}`;
       location.assign(nextPage);
     });
   }

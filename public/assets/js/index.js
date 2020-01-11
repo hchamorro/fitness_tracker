@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("index");
   const inputs = document.querySelectorAll("input");
   const url = window.location.search;
   let userId;
@@ -46,16 +45,22 @@ $(document).ready(function() {
     };
     $.ajax("/api/user", {
       type: "POST",
+      error: function(err) {
+        document.getElementById("userNameExists").textContent = err.responseJSON.message
+        console.log(err.responseJSON.message);
+      },
       data: newUser
     }).then(result => {
       newUser.userId = result.id;
       $.ajax("/api/user_info", {
         type: "POST",
         data: newUser
-      }).then(result => {
-        let nextPage = `/home?user_id=${newUser.userId}`;
-        location.assign(nextPage);
-      });
+      })
+        .then(result => {
+          let nextPage = `/home?user_id=${newUser.userId}`;
+          location.assign(nextPage);
+        })
+        .catch(err => console.log("err", err));
     });
   });
 

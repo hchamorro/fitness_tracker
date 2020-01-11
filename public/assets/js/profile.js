@@ -1,9 +1,8 @@
 $(document).ready(function() {
-  console.log("profile");
-  const userProfileInfo = $("#userProfileInfo");
+  const userProfileInfo = $('#userProfileInfo');
 
   // Adding an event listener for when the form is submitted
-  $(userProfileInfo).on("submit", handleFormSubmit);
+  $(userProfileInfo).on('submit', handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a info)
   const url = window.location.search;
 
@@ -12,10 +11,11 @@ $(document).ready(function() {
   let updating = false;
 
   // If we have this section in our url, we pull out the user id from the url  our url
-  if (url.indexOf("?user_id=") !== -1) {
-    userId = url.split("=")[1];
+  if (url.indexOf('?user_id=') !== -1) {
+    userId = url.split('=')[1];
   }
 
+  alert(userId);
   const base64EncodeFile = file => {
     return new Promise((resolve, reject) => {
       let reader = new FileReader();
@@ -30,32 +30,39 @@ $(document).ready(function() {
   };
   // A function for handling what happens when the form to create a new post is submitted
   async function handleFormSubmit(event) {
+    const url = window.location.search;
+    let userId;
+    // If we have this section in our url, we pull out the user id from the url  our url
+    if (url.indexOf('?user_id=') !== -1) {
+      userId = url.split('=')[1];
+    }
     event.preventDefault();
-    const file = document.getElementById("profileImageUpload").files[0];
+    const file = document.getElementById('profileImageUpload').files[0];
 
     let profilePicture = null;
     if (file) {
       profilePicture = await base64EncodeFile(file);
-      const preview = document.querySelector("#profilepix");
+      const preview = document.querySelector('#profilepix');
       preview.src = profilePicture;
       preview.hidden = false;
     }
 
-    console.log("profilepix", profilePicture);
+    console.log('profilepix', profilePicture);
 
     // Constructing a userInfo object to hand to the database
     let userInfo = {
-      height: $("#userHeight").val(),
-      weight: $("#userWeight").val(),
-      DOB: $("#date-age").val(),
-      gender: $("#gender option:selected").text(),
-      venmo: $("#pay-source")
+      height: $('#userHeight').val(),
+      weight: $('#userWeight').val(),
+      DOB: $('#date-age').val(),
+      gender: $('#gender option:selected').text(),
+      venmo: $('#pay-source')
         .val()
         .trim(),
       userImage: profilePicture,
       userId: userId
     };
-    console.log("***********", userInfo);
+    console.log('this should be user id', userInfo.userId, '****', userId);
+    console.log('***********', userInfo);
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post
     // if (updating) {
@@ -69,16 +76,16 @@ $(document).ready(function() {
 
   //   // Submits a new post and brings user to blog page upon completion
   function submitInfo(info) {
-    $.post("/api/user_info", info, function() {
-      window.location.href = "/";
+    $.post('/api/user_info', info, function() {
+      window.location.href = '/';
     });
   }
 
   //   // Update a given post, bring user to the blog page when done
   function updateInfo(info) {
     $.ajax({
-      method: "PUT",
-      url: "/api/user_info",
+      method: 'PUT',
+      url: '/api/user_info',
       data: info
     }).then(function() {
       let nextPage = `/home?user_id=${userId}`;
@@ -92,7 +99,16 @@ $(document).ready(function() {
     const profileInfo = await getProfile(userId);
     console.log(profileInfo);
 
-    for (const { firstName, lastName, height, weight, DOB, gender, venmo, User } of profileInfo) {
+    for (const {
+      firstName,
+      lastName,
+      height,
+      weight,
+      DOB,
+      gender,
+      venmo,
+      User
+    } of profileInfo) {
       $('#profileInfo').append(`
       <div>
       <div class="profile-header">Personal Information</div>
@@ -122,8 +138,8 @@ $(document).ready(function() {
         height="180" width="180" class="profile-pic"></img>
         <label>${User.userName}</label>
         <label><i class="fas fa-envelope">:${User.email}</i></label>
-    </div>`
-      )};
+    </div>`);
+    }
   };
 
   function getProfile(user) {
@@ -140,13 +156,12 @@ $(document).ready(function() {
 
   renderProfile();
 
-
-$("#updateBtn").click(function() {
-  $("html,body").animate(
-    {
-      scrollTop: $("#userProfileInfo").offset().top
-    },
-    "slow"
-  );
-});
+  $('#updateBtn').click(function() {
+    $('html,body').animate(
+      {
+        scrollTop: $('#userProfileInfo').offset().top
+      },
+      'slow'
+    );
+  });
 });

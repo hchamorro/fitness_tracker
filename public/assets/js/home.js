@@ -38,16 +38,22 @@ $(document).ready(function() {
     console.log(allPosts);
     for (const { comment, image, User } of allPosts) {
       $('#postWall').prepend(`
-      <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
-      <div>${User.userName}</div>
-      <img
-        src="${image}"
-        height="450" width="500"></img>
-      <div>
-        <i class="fas fa-heart mt-10" style="color:slategray;"></i>
-        <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+      <div class="col-md-3-4 col-xs-3-4">
+      <div class="frow column-center" id='postWall'>
+        <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
+          <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">${User.username}</div>
+          <img
+            src="${image}"
+            height="450" width="500"></img>
+          <div>
+            <i class="fas fa-heart mt-10" style="color:slategray;"></i>
+            <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+          </div>
+          <div class= "frow column-start width-100">
+            <div class="mt-15 workout-font">Workout: ${comment}</div>
+          </div>
+        </div>
       </div>
-      <div class="mt-15">Comment stored in db is : "${comment}"</div>
     </div>`);
     }
   };

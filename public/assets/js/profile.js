@@ -120,7 +120,7 @@ $(document).ready(function() {
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         height="180" width="180" class="profile-pic"></img>
         <label>${User.userName}</label>
-        <label><i class="fas fa-envelope">:</i></label>
+        <label><i class="fas fa-envelope">:${User.email}</i></label>
     </div>`
       )};
   };

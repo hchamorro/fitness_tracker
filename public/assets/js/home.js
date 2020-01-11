@@ -37,8 +37,7 @@ $(document).ready(function() {
     const allPosts = await getPosts();
     console.log(allPosts);
     for (const { comment, image, User } of allPosts) {
-      $("#postWall").append(`
-      $('#postWall').prepend(`
+      $("#postWall").prepend(`
       <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
       <div>${User.userName}</div>
       <img

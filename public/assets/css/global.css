@@ -145,11 +145,25 @@ button.my-custom-button {
 }
 
 .user-bc {
-  background-color: #f8f8f8;
+  background-color: white;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .user-profile-image {
   border-radius: 50%;
+}
+
+.post-username{
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font: bold;
+}
+
+.workout-font{
+  color: #777;
 }
 
 .error {

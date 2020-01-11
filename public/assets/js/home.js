@@ -43,7 +43,7 @@ $(document).ready(function() {
       <div class="col-md-3-4 col-xs-3-4 mt-30 mb-30">
       <div class="frow column-center" id='postWall'>
         <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
-          <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">${User.username}</div>
+          <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">${User.userName}</div>
           <img
             src="${image}"
             height="350" width="400"></img>

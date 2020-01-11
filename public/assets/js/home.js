@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log("home");
   // Variable to hold our posts
   let posts;
 
@@ -6,8 +7,8 @@ $(document).ready(function() {
   // Looks for a query param in the url for user_id
   const url = window.location.search;
   let userId;
-  if (url.indexOf('?user_id=') !== -1) {
-    userId = url.split('=')[1];
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
     getPosts(userId);
   }
   // If there's no userId we just get all posts as usual
@@ -28,7 +29,7 @@ $(document).ready(function() {
     //Convert object into array of key/value pairs
     const scoreboardArray = Object.entries(scoreboard);
     for (const [username, score] of scoreboardArray) {
-      $('#scoreboard').append(`<div> ${username} : ${score} </div>`);
+      $("#scoreboard").append(`<div> ${username} : ${score} </div>`);
     }
   };
 
@@ -36,7 +37,7 @@ $(document).ready(function() {
     const allPosts = await getPosts();
     console.log(allPosts);
     for (const { comment, image, User } of allPosts) {
-      $('#postWall').append(`
+      $("#postWall").append(`
       <div class="frow column-center shadow-dark pl-5 pr-5 pb-20 pt-20 user-bc">
       <div>${User.userName}</div>
       <img
@@ -55,11 +56,11 @@ $(document).ready(function() {
   //Get all posts (optionally through url Query) and returns as promise
   function getPosts(user) {
     return new Promise((resolve, reject) => {
-      userId = user || '';
+      userId = user || "";
       if (userId) {
         userId = `/?user_id=${userId}`;
       }
-      $.get('/api/post' + userId, function(data) {
+      $.get("/api/post" + userId, function(data) {
         resolve(data);
       });
     });
@@ -71,38 +72,38 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   // Get the modal
-  var modal = document.getElementById('myModal');
+  var modal = document.getElementById("myModal");
 
   // Get the button that opens the modal
-  var modBtn = document.getElementById('popupUser');
+  var modBtn = document.getElementById("popupUser");
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName('close')[0];
+  var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on the button, open the modal
   modBtn.onclick = function() {
-    modal.style.display = 'block';
+    modal.style.display = "block";
   };
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
-    modal.style.display = 'none';
+    modal.style.display = "none";
   };
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = 'none';
+      modal.style.display = "none";
     }
   };
 });
 
 $(document).ready(function() {
-  $('#goToProfile').on('click', () => {
+  $("#goToProfile").on("click", () => {
     const url = window.location.search;
     let userId;
-    if (url.indexOf('?user_id=') !== -1) {
-      userId = url.split('=')[1];
+    if (url.indexOf("?user_id=") !== -1) {
+      userId = url.split("=")[1];
       let nextPage = `/profile?user_id=${userId}`;
       location.assign(nextPage);
     }
@@ -117,34 +118,34 @@ const constraints = (window.constraints = {
 });
 
 function handleSuccess(stream) {
-  const video = document.querySelector('video');
+  const video = document.querySelector("video");
   const videoTracks = stream.getVideoTracks();
-  console.log('Got stream with constraints:', constraints);
+  console.log("Got stream with constraints:", constraints);
   console.log(`Using video device: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 }
 
 function handleError(error) {
-  if (error.name === 'ConstraintNotSatisfiedError') {
+  if (error.name === "ConstraintNotSatisfiedError") {
     const v = constraints.video;
     errorMsg(
       `The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`
     );
-  } else if (error.name === 'PermissionDeniedError') {
+  } else if (error.name === "PermissionDeniedError") {
     errorMsg(
-      'Permissions have not been granted to use your camera and ' +
-        'microphone, you need to allow the page access to your devices in ' +
-        'order for the demo to work.'
+      "Permissions have not been granted to use your camera and " +
+        "microphone, you need to allow the page access to your devices in " +
+        "order for the demo to work."
     );
   }
   errorMsg(`getUserMedia error: ${error.name}`, error);
 }
 
 function errorMsg(msg, error) {
-  const errorElement = document.querySelector('#errorMsg');
+  const errorElement = document.querySelector("#errorMsg");
   errorElement.innerHTML += `<p>${msg}</p>`;
-  if (typeof error !== 'undefined') {
+  if (typeof error !== "undefined") {
     console.error(error);
   }
 }

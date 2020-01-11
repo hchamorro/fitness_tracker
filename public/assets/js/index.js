@@ -1,27 +1,28 @@
 $(document).ready(function() {
-  const inputs = document.querySelectorAll('input');
+  console.log("index");
+  const inputs = document.querySelectorAll("input");
   const url = window.location.search;
   let userId;
-  if (url.indexOf('?user_id=') !== -1) {
-    userId = url.split('=')[1];
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
   }
 
   inputs.forEach(input => {
-    input.addEventListener('input', () => {
+    input.addEventListener("input", () => {
       const value = input.value.trim();
       if (!value) {
-        input.classList.add('dirty');
+        input.classList.add("dirty");
       } else {
-        input.classList.remove('dirty');
+        input.classList.remove("dirty");
       }
     });
   });
 
-  $('#userForm').submit(() => {
+  $("#userForm").submit(() => {
     event.preventDefault();
     let submit = true;
-    if ($('[name="userName"]').val() === '') {
-      console.log('error');
+    if ($('[name="userName"]').val() === "") {
+      console.log("error");
     }
 
     //Add username to database
@@ -33,23 +34,23 @@ $(document).ready(function() {
       lastName: $('[name="lastName"]')
         .val()
         .trim(),
-      userName: $('#userName')
+      userName: $("#userName")
         .val()
         .trim(),
       email: $('[name="email"]')
         .val()
         .trim(),
-      password: $('#password')
+      password: $("#password")
         .val()
         .trim()
     };
-    $.ajax('/api/user', {
-      type: 'POST',
+    $.ajax("/api/user", {
+      type: "POST",
       data: newUser
     }).then(result => {
       newUser.userId = result.id;
-      $.ajax('/api/user_info', {
-        type: 'POST',
+      $.ajax("/api/user_info", {
+        type: "POST",
         data: newUser
       }).then(result => {
         let nextPage = `/home?user_id=${newUser.userId}`;
@@ -59,19 +60,19 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $('#login-trigger').click(function() {
-    $(this)
-      .next('#login-content')
-      .slideToggle();
+// $(document).ready(function() {
+//   $("#login-trigger").click(function() {
+//     $(this)
+//       .next("#login-content")
+//       .slideToggle();
 
-    if ($(this).hasClass('active'))
-      $(this)
-        .find('span')
-        .html('&#x25B2;');
-    else
-      $(this)
-        .find('span')
-        .html('&#x25BC;');
-  });
-});
+//     if ($(this).hasClass("active"))
+//       $(this)
+//         .find("span")
+//         .html("&#x25B2;");
+//     else
+//       $(this)
+//         .find("span")
+//         .html("&#x25BC;");
+//   });
+// });

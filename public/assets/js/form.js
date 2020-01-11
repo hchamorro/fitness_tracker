@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log("form");
   const cmsForm = $("#cms");
   const firstName = $("#first-name");
   const lastName = $("#last-name");

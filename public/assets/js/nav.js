@@ -1,24 +1,21 @@
-
-console.log("nav");
-
 const hamburgerDisplayLink = () => {
-  document.getElementById("logo").hidden = !document.getElementById("logo")
+  document.getElementById('logo').hidden = !document.getElementById('logo')
     .hidden;
-  document.getElementById("mobile-links").hidden = !document.getElementById(
-    "mobile-links"
+  document.getElementById('mobile-links').hidden = !document.getElementById(
+    'mobile-links'
   ).hidden;
 };
 
 const signInIndex = () => {
-  document.getElementById("signin-showing").hidden = false;
+  document.getElementById('signin-showing').hidden = false;
 };
 
 $(document).ready(function() {
-  $("#go-home-click").click(function() {
+  $('#go-home-click').click(function() {
     location.assign(`/`);
   });
 
-   $('#nav-profile').click(function() {
+  $('#nav-profile').click(function() {
     const url = window.location.search;
     let userId;
     if (url.indexOf('?user_id=') !== -1) {
@@ -26,7 +23,6 @@ $(document).ready(function() {
     }
     let nextPage = `/profile?user_id=${userId}`;
     location.assign(nextPage);
-
   });
 
   $('#login-trigger').click(function() {

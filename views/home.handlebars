@@ -2,72 +2,72 @@
 <script src="/assets/js/capture.js"></script>
 
 <div class="bg-color">
-<div class="half-circle"></div>
+  <div class="half-circle"></div>
 
-<div class="frow">
-  <div class="col-md-3-4 col-xs-3-4 mt-30">
-    <div class="frow column-center" id='postWall'>
-      <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
-        <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">katiemcbride</div>
-        <img
-          src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          height="350" width="400"></img>
-        <div>
-          <i class="fas fa-heart mt-10" style="color:slategray;"></i>
-          <i class="fas fa-comment ml-5" style="color:slategray;"></i>
-        </div>
-        <div class= "frow column-start width-100">
-          <div class="mt-15 workout-font">Workout: text area for previous peoples posts</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-md-1-4 col-xs-1-4 items-center">
-    <div class="frow column-center">
-      <div>
-        <div class="frow row-center">
+  <div class="frow">
+    <div class="col-md-3-4 col-xs-3-4 mt-30">
+      <div class="frow column-center" id='postWall'>
+        <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
+          <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">katiemcbride</div>
           <img
             src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-            height="80" width="82" class="user-profile-image"></img>
-          <div class="ml-10" id='js-name'></div>
-        </div>
-      </div>
-      <div class="score-loc mt-30 mr-10">Scoreboard
-        <div class="shadow-dark" id='scoreboard'>
+            height="350" width="400"></img>
+          <div>
+            <i class="fas fa-heart mt-10" style="color:slategray;"></i>
+            <i class="fas fa-comment ml-5" style="color:slategray;"></i>
+          </div>
+          <div class="frow column-start width-100">
+            <div class="mt-15 workout-font">Workout: text area for previous peoples posts</div>
+          </div>
         </div>
       </div>
     </div>
-    <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
-    Check-In
-  </div>
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form novalidate="novalidate" id="userForm">
-        <p>
-          <div class="camera">
-            <video id="video">Video stream not available.</video>
-            <img id="photo" alt="The screen capture will appear in this box.">
-            <button id="startbutton" type="button">Take photo</button>
+
+
+    <div class="col-md-1-4 col-xs-1-4 items-center">
+      <div class="frow column-center">
+        <div>
+          <div class="frow row-center">
+            <img
+              src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+              height="80" width="82" class="user-profile-image"></img>
+            <div class="ml-10" id='js-name'></div>
           </div>
-          <canvas id="canvas">
-          </canvas>
-          <div class="output">
-            {{!-- <img id="photo" alt="The screen capture will appear in this box.">  --}}
-          </div>
-        </p>
-        <div class="col-md-1-2" id="comment">
-          <label>Workout:</label>
-          <input type="text" maxlength="300" required="required" name="workoutPost" id='js-workoutPost' />
         </div>
-        <input type="submit" value="Submit" id='js-submitBtn'>
-      </form>
+        <div class="score-loc mt-30 mr-10">Scoreboard
+          <div class="shadow-dark" id='scoreboard'>
+          </div>
+        </div>
+      </div>
+      <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
+      Check-In
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form novalidate="novalidate" id="userForm">
+          <p>
+            <div class="camera">
+              <video id="video">Video stream not available.</video>
+              <img id="photo" alt="The screen capture will appear in this box.">
+              <button id="startbutton" type="button">Take photo</button>
+            </div>
+            <canvas id="canvas">
+            </canvas>
+            <div class="output">
+              {{!-- <img id="photo" alt="The screen capture will appear in this box.">  --}}
+            </div>
+          </p>
+          <div class="col-md-1-2" id="comment">
+            <label>Workout:</label>
+            <input type="text" maxlength="300" required="required" name="workoutPost" id='js-workoutPost' />
+          </div>
+          <input type="submit" value="Submit" id='js-submitBtn'>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
 </div>

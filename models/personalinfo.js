@@ -15,22 +15,22 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     height: {
-      type: DataTypes.INTEGER,
-      allowNull: !false,
+      type: DataTypes.STRING,
+      allowNull: true,
       validate: {
         len: [1, 3]
       }
     },
     weight: {
-      type: DataTypes.INTEGER,
-      allowNull: !false,
+      type: DataTypes.STRING,
+      allowNull: true,
       validate: {
         len: [1, 3]
       }
     },
     DOB: {
       type: DataTypes.DATEONLY,
-      allowNull: !false
+      allowNull: true
     },
     gender: {
       type: DataTypes.STRING,
@@ -39,13 +39,13 @@ module.exports = (sequelize, DataTypes) => {
 
     venmo: {
       type: DataTypes.STRING,
-      allowNull: !false,
+      allowNull: true,
       validate: {
         len: [1]
       }
     },
     userImage: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT('long'),
       allowNull: true
     }
   });

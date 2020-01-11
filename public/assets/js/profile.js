@@ -46,8 +46,6 @@ $(document).ready(function() {
       preview.hidden = false;
     }
 
-    console.log('profilepix', profilePicture);
-
     // Constructing a userInfo object to hand to the database
     let userInfo = {
       height: $('#userHeight').val(),
@@ -86,7 +84,7 @@ $(document).ready(function() {
 
   const renderProfile = async () => {
     const profileInfo = await getProfile(userId);
-    console.log(profileInfo);
+    // console.log(profileInfo);
 
     for (const {
       firstName,

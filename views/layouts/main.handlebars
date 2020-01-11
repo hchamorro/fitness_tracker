@@ -11,13 +11,53 @@
   <script src="https://kit.fontawesome.com/0270abbd8e.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/assets/js/capture.js"></script>
-  <script src="/assets/js/hamburger.js"></script>
+  <script src="/assets/js/nav.js"></script>
   <title>Fitness Tracker!</title>
   
 
 </head>
 
 <body>
+ <div class="header">
+  <div id="mobile-hamburger-closed" class="frow height-100">
+    <div class="col-xs-1-4">
+      <span class="color-block-landing"></span>
+      <div class="frow">
+        <div class="justify-start logo">FitBOARD</div>
+      </div>
+    </div>
+    <div class="nav col-xs-3-4">
+      <div class="frow justify-between height-100 width-100 items-center visible-sm visible-md visible-lg">
+        <a class="ml-25">
+          About
+        </a>
+        <a class="ml-25" id="goToProfile">
+          Profile
+        </a>
+        <a class="ml-25">
+          Login
+        </a>
+      </div>
+      <div class="frow justify-end height-100 visible-xs">
+        <button id="mobile-hamburger-menu" type="button" onclick="hamburgerDisplayLink()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-hamburger-displayed" class="frow row-between items-center height-100 width-100 small-nav" hidden>
+    <a>About</a>
+    <a>Profile</a>
+    <a>Login</a>
+    <button id="collaps-hamburger-menu" type="button" onclick="hamburgerHideLink()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+</div>
   {{{ body }}}
 </body>
 

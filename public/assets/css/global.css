@@ -21,7 +21,7 @@ body {
 
 .user-inputs {
   color: rgb(100, 97, 97);
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .my-custom-textarea {
@@ -366,4 +366,13 @@ nav #login-content {
 
 .profile-labels{
   font-size: 25px;
+}
+
+.profileButton{
+  display: flex;
+  justify-content: center;
+}
+
+.updateProfile{
+  text-align: center;
 }

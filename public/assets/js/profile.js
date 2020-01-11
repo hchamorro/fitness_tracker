@@ -90,8 +90,8 @@ $(document).ready(function() {
 
   const renderProfile = async () => {
     const profileInfo = await getProfile(userId);
-    const userInfo = await getUserInfo(userId);
-    for (const { firstName, lastName, height, weight, DOB, gender, venmo } of profileInfo) {
+    console.log(profileInfo);
+    for (const { firstName, lastName, height, weight, DOB, gender, venmo, User:userName } of profileInfo) {
       $('#profileInfo').append(`
       <div>
       <div class="profile-header">Personal Information</div>
@@ -119,7 +119,7 @@ $(document).ready(function() {
         <img
         src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         height="180" width="180" class="profile-pic"></img>
-        <label>username</label>
+        <label>${userName}</label>
         <label><i class="fas fa-envelope">:</i></label>
     </div>`
       )};
@@ -137,18 +137,16 @@ $(document).ready(function() {
     });
   }
 
-  function getUserInfo(user) {
-    return new Promise((resolve, reject) => {
-      userId = user || '';
-      if (userId) {
-        userId = `/?user_id=${userId}`;
-      }
-      $.get('/api/user_info' + userId, function(data) {
-        resolve(data);
-      });
-    });
-  }
-
-
   renderProfile();
+
+
+
+$("#updateBtn").click(function() {
+  $("html,body").animate(
+    {
+      scrollTop: $("#userProfileInfo").offset().top
+    },
+    "slow"
+  );
+});
 });

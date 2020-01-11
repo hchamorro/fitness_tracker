@@ -35,7 +35,8 @@ router.get('/api/post/:id', (req, res) => {
 router.post('/api/post', (req, res) => {
   db.Post.create({
     comment: req.body.comment,
-    UserId: req.body.UserId
+    UserId: req.body.UserId,
+    image: req.body.image
   }).then(result => {
     console.log('1 entry successfully added');
     res.json(result);

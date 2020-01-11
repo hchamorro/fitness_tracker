@@ -145,11 +145,25 @@ button.my-custom-button {
 }
 
 .user-bc {
-  background-color: #f8f8f8;
+  background-color: white;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .user-profile-image {
   border-radius: 50%;
+}
+
+.post-username{
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font: bold;
+}
+
+.workout-font{
+  color: #777;
 }
 
 .error {
@@ -438,12 +452,16 @@ html {
   background: white;
 }
 
-.popout {
-  font-family: Futura, sans-serif;
-  font-weight: 900;
-  font-size: 100px;
-  /* padding: 80px; */
+/* MD, LG, XL */
+@media (min-width: 991px) {
+  .popout {
+    font-family: Futura, sans-serif;
+    font-weight: 900;
+    font-size: 7vw;
+    /* padding: 80px; */
+  }
 }
+
 @-webkit-keyframes ani {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -514,4 +532,13 @@ html {
 .popout span:nth-last-child(3n) {
   -webkit-animation-delay: -0.5s;
   animation-delay: -0.5s;
+}
+
+/* XS SM */
+@media (max-width: 991px) {
+  .popout {
+    font-family: Futura, sans-serif;
+    font-weight: 900;
+    font-size: 11vw;
+  }
 }

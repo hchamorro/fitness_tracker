@@ -23,14 +23,14 @@
     <div id="logo" class="shrink-0">
       <span class="color-block-landing"></span>
       <div class="frow">
-        <a class="logo">FitBOARD</a>
+        <a class="logo" id="go-home-click">FitBOARD</a>
       </div>
     </div>
     <div class="nav width-100">
       <div class="frow row-end items-center height-100 width-100">
         <div id="mobile-links" class="frow items-center grow-1" hidden>
-          <a class="ml-25">Sign Up</a>
-          <a class="ml-25">Profile</a>
+          <a class="ml-25" id="nav-sign-up">Sign Up</a>
+          <a class="ml-25" id="nav-profile">Profile</a>
           <a class="ml-25" id="login-trigger">Login</a>
         </div>
         <button class="collaps-hamburger-menu visible-xs" type="button" onclick="hamburgerDisplayLink()" >
@@ -54,9 +54,6 @@
               <button id="submitLogin" class="submit">Log In</button>
             </fieldset>
           </form>
-          {{!-- <a class="mr-25" onclick="signInIndex()">
-            Login
-          </a> --}}
         </div>
       </nav>
     </div>

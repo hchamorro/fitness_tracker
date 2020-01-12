@@ -90,6 +90,8 @@ $(document).ready(function() {
   renderPosts();
 });
 
+// POP UP POST
+
 $(document).ready(function() {
   // Get the modal
   var modal = document.getElementById('myModal');
@@ -117,6 +119,18 @@ $(document).ready(function() {
     }
   };
 });
+
+// GROUP POP UP
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+window.onclick = function() {
+  document.getElementById("myForm").style.display = "none";
+};
+
+
+
 
 $(document).ready(function() {
   $('#goToProfile').on('click', () => {

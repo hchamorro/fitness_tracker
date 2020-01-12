@@ -7,7 +7,7 @@
   <div class="frow">
     <div class="col-md-3-4 col-xs-3-4 mt-30">
       <div class="frow column-center" id='postWall'>
-        <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
+        {{!-- <div class="frow column-center pl-40 pr-40 pb-20 pt-20 user-bc">
           <div class="post-username pl-40 pr-40 pt-10 pb-10 mb-10">katiemcbride</div>
           <img
             src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
@@ -19,7 +19,7 @@
           <div class="frow column-start width-100">
             <div class="mt-15 workout-font">Workout: text area for previous peoples posts</div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
 
@@ -39,8 +39,56 @@
           </div>
         </div>
       </div>
+      <div>
       <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
       Check-In
+      </div>
+      <div>
+      <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="openForm()" id="popupGroup"></i>
+      New Group
+
+      <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <span class="close">&times;</span>
+        
+        <label for="grpName"><b>Group Name</b></label>
+        <input type="text" placeholder="Group Name" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label><b>Add Group Members  <i class="fas fa-1x fa-plus-circle" style="color:#D3C02F;" id="addMember"></i></b></label>
+        <input type="text" placeholder="Enter username" required>
+        
+         <fieldset>
+          <p>
+             <label>Duration</label>
+             <select id = "myList">
+               <option value = "1">one week</option>
+               <option value = "2">two weeks</option>
+               <option value = "3">three weeks</option>
+               <option value = "4">four weeks</option>
+             </select>
+          </p>
+       </fieldset>
+
+        <fieldset>
+          <p>
+             <label>Buy In</label>
+             <select id = "myList">
+               <option value = "1">$5</option>
+               <option value = "2">$10</option>
+               <option value = "3">$20</option>
+               <option value = "4">$30</option>
+             </select>
+          </p>
+       </fieldset>
+
+
+        <button type="submit" class="btn">Create Group</button>
+      </form>
+      </div>
+      </div>
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -68,6 +116,10 @@
         </form>
       </div>
     </div>
+
+
+
+
   </div>
 
 </div>

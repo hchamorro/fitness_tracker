@@ -88,6 +88,7 @@ $(document).ready(function() {
   displayName(userId);
   renderScoreboard();
   renderPosts();
+
 });
 
 // POP UP POST
@@ -100,7 +101,7 @@ $(document).ready(function() {
   var modBtn = document.getElementById('popupUser');
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName('close')[0];
+  var span = document.getElementById('close');
 
   // When the user clicks on the button, open the modal
   modBtn.onclick = function() {
@@ -120,16 +121,35 @@ $(document).ready(function() {
   };
 });
 
-// GROUP POP UP
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+$(document).ready(function() {
+  // Get the modal
+  var myForm = document.getElementById('myForm');
 
-window.onclick = function() {
-  document.getElementById("myForm").style.display = "none";
-};
+  // Get the button that opens the modal
+  var grpBtn = document.getElementById('popupGroup');
 
+  // Get the <span> element that closes the modal
+  var formClose = document.getElementById('formClose');
 
+  // When the user clicks on the button, open the modal
+  grpBtn.onclick = function() {
+    myForm.style.display = 'block';
+  };
+
+  // When the user clicks on <span> (x), close the modal
+  formClose.onclick = function() {
+    myForm.style.display = 'none';
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+});
+
+ 
 
 
 $(document).ready(function() {

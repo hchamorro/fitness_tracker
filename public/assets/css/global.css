@@ -48,7 +48,7 @@ button.my-custom-button {
   height: 20px;
   background-color: #d3c02f;
   position: absolute;
-  left: 55px;
+  left: 20px;
   margin-top: 32px;
 }
 .cards-container {
@@ -147,6 +147,7 @@ button.my-custom-button {
 .user-bc {
   background-color: white;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  z-index: 2;
 }
 
 .user-profile-image {
@@ -181,7 +182,7 @@ button.my-custom-button {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 3; /* Sit on top */
   left: 0;
   top: 0;
   max-width: 100%; /* Full width */
@@ -197,7 +198,15 @@ button.my-custom-button {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 55%; /* Could be more or less, depending on screen size */
+}
+
+.takeBtn{
+  background-color: #D3C02F;
+}
+
+.submitPostBtn{
+  background-color: #05386b;
 }
 
 /* The Close Button */
@@ -260,7 +269,7 @@ nav #login-content {
   top: 75px;
   right: 0;
   z-index: 999;
-  background: rgb(199, 198, 197);
+  background: white;
   background-image: linear-gradient(top, #fff, #eee);
   padding: 8px;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.9);
@@ -288,9 +297,9 @@ nav #login-content {
 }
 
 .submit {
-  background-color: #f76c6c;
+  background-color: lightblue;
   border-radius: 3px;
-  border: 1px solid #7e1515;
+  border: 1px solid lightblue;
   height: 30px;
   padding: 10;
   width: 100px;
@@ -302,7 +311,7 @@ nav #login-content {
 
 .submit:hover,
 .submit:focus {
-  background-color: #f76c6c;
+  background-color: #05386b;
   background-image: linear-gradient(top, #f76c6c, #e97171);
 }
 
@@ -321,7 +330,7 @@ nav #login-content {
 }
 
 .sign-up-btn {
-  background-color: rgb(233, 109, 109);
+  background-color: #D3C02F;
 }
 
 .top-font {
@@ -546,9 +555,10 @@ html {
 }
 /* background look */
 .bg-color{
-  background: linear-gradient(141deg, LIGHTBLUE 0%, LIGHTBLUE 100%);
+  background: linear-gradient(150deg, rgb(245, 252, 255) 0%, #05386b 120%);
+  /* background: rgb(52, 19, 65); */
 }
-.score-loc{
+.score-loc{s
 position: fixed;
 right: 60px;
 top: 320px;
@@ -565,7 +575,7 @@ top: 320px;
   border-top-right-radius: 100px;
   border-bottom-left-radius:100px;
   border-bottom-right-radius:10px;
-  border: 10px solid #FFFFFF;
+  border: 10px solid rgb(61, 47, 250);
   border-bottom: 100;
   
   -webkit-box-sizing: border-box;
@@ -584,7 +594,7 @@ top: 320px;
   border-top-right-radius: 100px;
   border-bottom-left-radius:100px;
   border-bottom-right-radius:100px;
-  border: 10px solid #FFFFFF;
+  border: 10px solid yellow;
   border-bottom: 100;
   
   -webkit-box-sizing: border-box;
@@ -603,7 +613,7 @@ top: 320px;
   border-top-right-radius: 10px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
-  border: 10px solid #FFFFFF;
+  border: 10px solid rgb(13, 240, 24);
   border-bottom: 100;
   
   -webkit-box-sizing: border-box;
@@ -621,7 +631,7 @@ top: 320px;
   border-top-right-radius: 10px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
-  border: 10px solid #FFFFFF;
+  border: 10px solid rgb(238, 8, 142);
   border-bottom: 100;
 }
 .triangle {
@@ -635,7 +645,7 @@ top: 320px;
   border-top-right-radius: 10px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
-  border: 10px solid #FFFFFF;
+  border: 10px solid rgb(224, 240, 10);
   border-bottom: 100;
 }
 .triangle-left {
@@ -645,7 +655,7 @@ top: 320px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
-  border-right: 100px solid #FFFFFF;
+  border-right: 100px solid rgb(5, 247, 46);
   border-bottom: 50px solid transparent;
 }
 
@@ -708,3 +718,5 @@ top: 320px;
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+

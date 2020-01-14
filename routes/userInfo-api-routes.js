@@ -33,7 +33,6 @@ router.get('/api/user_info/:id', (req, res) => {
   });
 });
 
-
 router.post('/api/user_info', (req, res) => {
   db.PersonalInfo.create({
     firstName: req.body.firstName,
@@ -52,7 +51,6 @@ router.post('/api/user_info', (req, res) => {
 });
 
 router.put('/api/user_info', (req, res) => {
-  console.log('************', req.body);
   db.PersonalInfo.update(
     {
       venmo: req.body.venmo,

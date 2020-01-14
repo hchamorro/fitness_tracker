@@ -45,9 +45,9 @@ $(document).ready(function() {
     let profilePicture = null;
     if (file) {
       profilePicture = await base64EncodeFile(file);
-      const preview = document.querySelector('#profilepix');
-      preview.src = profilePicture;
-      preview.hidden = false;
+      // const preview = document.querySelector('#profilepix');
+      // preview.src = profilePicture;
+      // preview.hidden = false;
     }
 
     // Constructing a userInfo object to hand to the database
@@ -62,12 +62,13 @@ $(document).ready(function() {
       userImage: profilePicture,
       userId: userId
     };
-    console.log(userInfo);
+
     updateInfo(userInfo);
   }
 
   //   // Update a given post, bring user to the blog page when done
   function updateInfo(info) {
+    console.log(info);
     const url = window.location.search;
     let userId;
     // If we have this section in our url, we pull out the user id from the url  our url

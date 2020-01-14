@@ -45,7 +45,6 @@ $(document).ready(function() {
     let profilePicture = null;
     if (file) {
       profilePicture = await base64EncodeFile(file);
-      console.log("1", profilePicture);
       // const preview = document.querySelector('#profilepix');
       // preview.src = profilePicture;
       // preview.hidden = false;
@@ -118,7 +117,6 @@ $(document).ready(function() {
       if (venmo === null) {
         venmo = "";
       }
-      console.log("2", userImage);
       if (userImage === null) {
         userImage = "/assets/img/empty-icon.png";
       }

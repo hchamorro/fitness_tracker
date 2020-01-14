@@ -567,7 +567,7 @@ html {
   z-index: 0;
   position: fixed;
   right: 0px;
-  top: 290px;
+  top: 500px;
 
   width: 200px;
   height: 200px;
@@ -585,16 +585,16 @@ html {
 .circle {
   z-index: 0;
   position: fixed;
-  right: 600px;
-  top: 200px;
+  left: 30px;
+  top: 90px;
 
   width: 200px;
   height: 200px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border: 10px solid yellow;
+  border-bottom-left-radius:100px;
+  border-bottom-right-radius:100px;
+  border: 10px solid rgb(45, 4, 158);
   border-bottom: 100;
 
   -webkit-box-sizing: border-box;
@@ -605,15 +605,15 @@ html {
   z-index: 0;
   position: fixed;
   right: 300px;
-  top: 500px;
+  top: 200px;
 
   width: 200px;
   height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 10px solid rgb(13, 240, 24);
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  border: 10px solid rgb(235, 22, 188);
   border-bottom: 100;
 
   -webkit-box-sizing: border-box;
@@ -639,19 +639,18 @@ html {
   position: fixed;
   left: 100px;
   top: 340px;
-
   width: 200px;
   height: 200px;
   border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 10px solid rgb(224, 240, 10);
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  border: 10px solid rgb(238, 255, 0);
   border-bottom: 100;
 }
 .triangle-left {
   position: fixed;
-  left: 50px;
-  top: 300px;
+  right: 300px;
+  top: 500px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
@@ -721,9 +720,23 @@ html {
 
 .scoreboard {
   background-color: white;
-  width: 350px;
-
+  width: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.scoreboardColumn {
+  /* border: 1px red solid; */
+  flex: 0 0 50%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.scores {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.scores:last-child {
+  border-bottom: 0 none;
 }
 
 .scoreboardColumn {

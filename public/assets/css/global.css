@@ -592,18 +592,9 @@ html {
   height: 200px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-bottom-left-radius:100px;
   border-bottom-right-radius:100px;
   border: 10px solid rgb(45, 4, 158);
-=======
-=======
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border: 10px solid yellow;
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
   border-bottom: 100;
 
   -webkit-box-sizing: border-box;
@@ -620,18 +611,9 @@ html {
   height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   border: 10px solid rgb(235, 22, 188);
-=======
-=======
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 10px solid rgb(13, 240, 24);
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
   border-bottom: 100;
 
   -webkit-box-sizing: border-box;
@@ -657,22 +639,12 @@ html {
   position: fixed;
   left: 100px;
   top: 340px;
-
   width: 200px;
   height: 200px;
   border-top-right-radius: 10px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   border: 10px solid rgb(238, 255, 0);
-=======
-=======
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 10px solid rgb(224, 240, 10);
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
   border-bottom: 100;
 }
 .triangle-left {
@@ -748,9 +720,7 @@ html {
 
 .scoreboard {
   background-color: white;
-  width: 350px;
-<<<<<<< HEAD
-
+  width: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.05);
 }
 
@@ -769,11 +739,6 @@ html {
   border-bottom: 0 none;
 }
 
-=======
-
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.05);
-}
-
 .scoreboardColumn {
   /* border: 1px red solid; */
   flex: 0 0 50%;
@@ -789,7 +754,6 @@ html {
   border-bottom: 0 none;
 }
 
->>>>>>> 7ab5d7682f580668253faa878b5f99d22d6efdef
 .scoreboardTitle {
   background-color: #05386b;
   color: white;

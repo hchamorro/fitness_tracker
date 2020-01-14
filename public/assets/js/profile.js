@@ -91,7 +91,7 @@ $(document).ready(function() {
     const profileInfo = await getProfile(userId);
     // console.log(profileInfo);
 
-    for (const {
+    for (let {
       firstName,
       lastName,
       height,
@@ -102,7 +102,26 @@ $(document).ready(function() {
       User,
       userImage
     } of profileInfo) {
-      $('#profileInfo').html(`
+      if (height === null) {
+        height = '';
+      }
+      if (weight === null) {
+        weight = '';
+      }
+      if (DOB === null) {
+        DOB = '';
+      }
+      if (gender === null) {
+        gender = '';
+      }
+      if (venmo === null) {
+        venmo = '';
+      }
+      if (userImage === null) {
+        userImage = '/assets/img/empty-icon.png';
+      }
+      $('#profileInfo').html(
+        `
       <div>
       <div class="profile-header">Personal Information</div>
         <label class="pt-15 mt-20 profile-labels">
@@ -131,7 +150,8 @@ $(document).ready(function() {
         height="180" width="180" class="profile-pic"></img>
         <label>${User.userName}</label>
         <label><i class="fas fa-envelope">:${User.email}</i></label>
-    </div>`);
+    </div>`
+      );
     }
   };
 

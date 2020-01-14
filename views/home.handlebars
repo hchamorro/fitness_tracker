@@ -2,7 +2,7 @@
 <script src="/assets/js/capture.js"></script>
 
 <div class="bg-color">
-{{!-- <div class="square"></div>
+  {{!-- <div class="square"></div>
 <div class="triangle"></div>
 <div class="half-circle"></div>
 <div class="circle"></div>
@@ -33,9 +33,8 @@
       <div class="frow column-center">
         <div>
           <div class="frow row-center mt-15">
-            <img
-              src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              height="80" width="82" class="user-profile-image"></img>
+            <img src="/assets/img/empty icon.png" height="80" width="82" class="user-profile-image"
+              id='js-profileIcon'></img>
             <div class="ml-10" id='js-name'></div>
           </div>
         </div>
@@ -45,54 +44,55 @@
         </div>
       </div>
       <div>
-      <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
-      Check-In
+        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" id="popupUser"></i>
+        Check-In
       </div>
       <div>
-      <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="openForm()" id="popupGroup"></i>
-      New Group
+        <i class="fas fa-3x fa-plus-circle mt-20 popup" style="color:#D3C02F;" onclick="openForm()" id="popupGroup"></i>
+        New Group
 
-      <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
-        <div id="formClose">&times;</div>
-        
-        <label for="grpName"><b>Group Name</b></label>
-        <input type="text" placeholder="Group Name" required>
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <div id="formClose">&times;</div>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="grpName"><b>Group Name</b></label>
+            <input type="text" placeholder="Group Name" required>
 
-        <label><b>Add Group Members  <i class="fas fa-1x fa-plus-circle" style="color:#D3C02F;" id="addMember"></i></b></label>
-        <input type="text" placeholder="Enter username" required>
-        
-         <fieldset>
-          <p>
-             <label>Duration</label>
-             <select id = "myList">
-               <option value = "1">one week</option>
-               <option value = "2">two weeks</option>
-               <option value = "3">three weeks</option>
-               <option value = "4">four weeks</option>
-             </select>
-          </p>
-       </fieldset>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <fieldset>
-          <p>
-             <label>Buy In</label>
-             <select id = "myList">
-               <option value = "1">$5</option>
-               <option value = "2">$10</option>
-               <option value = "3">$20</option>
-               <option value = "4">$30</option>
-             </select>
-          </p>
-       </fieldset>
+            <label><b>Add Group Members <i class="fas fa-1x fa-plus-circle" style="color:#D3C02F;"
+                  id="addMember"></i></b></label>
+            <input type="text" placeholder="Enter username" required>
+
+            <fieldset>
+              <p>
+                <label>Duration</label>
+                <select id="myList">
+                  <option value="1">one week</option>
+                  <option value="2">two weeks</option>
+                  <option value="3">three weeks</option>
+                  <option value="4">four weeks</option>
+                </select>
+              </p>
+            </fieldset>
+
+            <fieldset>
+              <p>
+                <label>Buy In</label>
+                <select id="myList">
+                  <option value="1">$5</option>
+                  <option value="2">$10</option>
+                  <option value="3">$20</option>
+                  <option value="4">$30</option>
+                </select>
+              </p>
+            </fieldset>
 
 
-        <button type="submit" class="btn">Create Group</button>
-      </form>
-      </div>
+            <button type="submit" class="btn">Create Group</button>
+          </form>
+        </div>
       </div>
     </div>
     <!-- The Modal -->

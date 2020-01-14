@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  const userProfileInfo = $("#userProfileInfo");
+  const userProfileInfo = $('#userProfileInfo');
 
   // Adding an event listener for when the form is submitted
-  $(userProfileInfo).on("submit", handleFormSubmit);
+  $(userProfileInfo).on('submit', handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a info)
   const url = window.location.search;
 
@@ -11,8 +11,8 @@ $(document).ready(function() {
   let updating = false;
 
   // If we have this section in our url, we pull out the user id from the url  our url
-  if (url.indexOf("?user_id=") !== -1) {
-    userId = url.split("=")[1];
+  if (url.indexOf('?user_id=') !== -1) {
+    userId = url.split('=')[1];
   }
 
   const base64EncodeFile = file => {
@@ -30,39 +30,39 @@ $(document).ready(function() {
   // A function for handling what happens when the form to create a new post is submitted
   async function handleFormSubmit(event) {
     document.getElementById(
-      "userProfileInfo"
-    ).hidden = !document.getElementById("userProfileInfo").hidden;
+      'userProfileInfo'
+    ).hidden = !document.getElementById('userProfileInfo').hidden;
 
     const url = window.location.search;
     let userId;
     // If we have this section in our url, we pull out the user id from the url  our url
-    if (url.indexOf("?user_id=") !== -1) {
-      userId = url.split("=")[1];
+    if (url.indexOf('?user_id=') !== -1) {
+      userId = url.split('=')[1];
     }
     event.preventDefault();
-    const file = document.getElementById("profileImageUpload").files[0];
+    const file = document.getElementById('profileImageUpload').files[0];
 
     let profilePicture = null;
     if (file) {
       profilePicture = await base64EncodeFile(file);
-      const preview = document.querySelector("#profilepix");
+      const preview = document.querySelector('#profilepix');
       preview.src = profilePicture;
       preview.hidden = false;
     }
 
     // Constructing a userInfo object to hand to the database
     let userInfo = {
-      height: $("#userHeight").val(),
-      weight: $("#userWeight").val(),
-      DOB: $("#date-age").val(),
-      gender: $("#gender option:selected").text(),
-      venmo: $("#pay-source")
+      height: $('#userHeight').val(),
+      weight: $('#userWeight').val(),
+      DOB: $('#date-age').val(),
+      gender: $('#gender option:selected').text(),
+      venmo: $('#pay-source')
         .val()
         .trim(),
       userImage: profilePicture,
       userId: userId
     };
-
+    console.log(userInfo);
     updateInfo(userInfo);
   }
 
@@ -71,12 +71,12 @@ $(document).ready(function() {
     const url = window.location.search;
     let userId;
     // If we have this section in our url, we pull out the user id from the url  our url
-    if (url.indexOf("?user_id=") !== -1) {
-      userId = url.split("=")[1];
+    if (url.indexOf('?user_id=') !== -1) {
+      userId = url.split('=')[1];
     }
     $.ajax({
-      method: "PUT",
-      url: "/api/user_info",
+      method: 'PUT',
+      url: '/api/user_info',
       data: info
     }).then(function() {
       let nextPage = `/home?user_id=${userId}`;
@@ -98,9 +98,10 @@ $(document).ready(function() {
       DOB,
       gender,
       venmo,
-      User
+      User,
+      userImage
     } of profileInfo) {
-      $("#profileInfo").append(`
+      $('#profileInfo').html(`
       <div>
       <div class="profile-header">Personal Information</div>
         <label class="pt-15 mt-20 profile-labels">
@@ -125,7 +126,7 @@ $(document).ready(function() {
 
     <div class= "mt-30">
         <img
-        src="https://images.unsplash.com/photo-1544098485-2a2ed6da40ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        src="${userImage}"
         height="180" width="180" class="profile-pic"></img>
         <label>${User.userName}</label>
         <label><i class="fas fa-envelope">:${User.email}</i></label>
@@ -135,11 +136,11 @@ $(document).ready(function() {
 
   function getProfile(user) {
     return new Promise((resolve, reject) => {
-      userId = user || "";
+      userId = user || '';
       if (userId) {
         userId = `/?user_id=${userId}`;
       }
-      $.get("/api/user_info" + userId, function(data) {
+      $.get('/api/user_info' + userId, function(data) {
         resolve(data);
       });
     });
@@ -147,15 +148,15 @@ $(document).ready(function() {
 
   renderProfile();
 
-  $("#updateBtn").click(function() {
+  $('#updateBtn').click(function() {
     document.getElementById(
-      "userProfileInfo"
-    ).hidden = !document.getElementById("userProfileInfo").hidden;
-    $("html,body").animate(
+      'userProfileInfo'
+    ).hidden = !document.getElementById('userProfileInfo').hidden;
+    $('html,body').animate(
       {
-        scrollTop: $("#userProfileInfo").offset().top
+        scrollTop: $('#userProfileInfo').offset().top
       },
-      "slow"
+      'slow'
     );
   });
 });

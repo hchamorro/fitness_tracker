@@ -1,5 +1,46 @@
 <script src="/assets/js/index.js"></script>
 
+<div class="header">
+  <div class="frow nowrap row-between height-100">
+    <div id="logo" class="shrink-0">
+      <span class="color-block-landing"></span>
+      <div class="frow">
+        <a class="logo" id="go-home-click">FitBOARD</a>
+      </div>
+    </div>
+    <div class="nav width-100">
+      <div class="frow row-end items-center height-100 width-100">
+        <div id="mobile-links" class="frow items-center grow-1" hidden>
+          <a class="ml-25" id="nav-sign-up">Sign Up</a>
+          {{!-- <a class="ml-25" id="nav-profile">Profile</a> --}}
+          <a class="ml-25" id="login-trigger">Login</a>
+        </div>
+        <button class="collaps-hamburger-menu visible-xs" type="button" onclick="hamburgerDisplayLink()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3-4 height-100">
+    <div class="frow justify-end items-center height-100">
+      <nav>
+        <div id="login-content">
+          <form>
+            <fieldset class="inputs">
+              <input id="headerUsername" placeholder="Username" required>
+              <input id="headerPassword" placeholder="Password" required>
+            </fieldset>
+            <fieldset>
+              <button id="submitLogin" class="submit">Log In</button>
+            </fieldset>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
 
 <body>
 
@@ -9,23 +50,23 @@
       <div class="slogan-font home-title">JOIN. COMPETE. WIN.</div>
     </h3> --}}
     <p class="popout">
-	    <span>J</span>
-	    <span>O</span>
-	    <span>I</span>
-	    <span>N.</span><br>
-	    <span>C</span>
-	    <span>O</span>
-	    <span>M</span>
-	    <span>P</span>
-	    <span>E</span>
-	    <span>T</span>
-	    <span>E.</span><br>
+      <span>J</span>
+      <span>O</span>
+      <span>I</span>
+      <span>N.</span><br>
+      <span>C</span>
+      <span>O</span>
+      <span>M</span>
+      <span>P</span>
+      <span>E</span>
+      <span>T</span>
+      <span>E.</span><br>
       <span>W</span>
-	    <span>I</span>
-	    <span>N.</span>
+      <span>I</span>
+      <span>N.</span>
     </p>
-    
-  
+
+
     <!-- see above message for details  -->
 
     <div class="frow mt-50 sign-up">
@@ -38,7 +79,7 @@
               <div class="error">
                 This field is required
               </div>
-              
+
             </div>
           </div>
           <div class="frow gutters">
@@ -51,7 +92,8 @@
           </div>
           <div class="frow gutters">
             <div class="col-md-1-2">
-              <input type="text" maxlength="100" required="required" name="userName" placeholder="User Name" id="userName" />
+              <input type="text" maxlength="100" required="required" name="userName" placeholder="User Name"
+                id="userName" />
               <div class="error">
                 This field is required
               </div>
@@ -68,7 +110,8 @@
           </div>
           <div class="frow gutters">
             <div class="frow col-md-1-2">
-              <input type="password" maxlength="100" required="required" name="password" placeholder="Password" id="password" />
+              <input type="password" maxlength="100" required="required" name="password" placeholder="Password"
+                id="password" />
               <div class="error">
                 <p>
                   Log in error:
@@ -116,4 +159,4 @@
     </div>
 
 
-</main>
+  </main>

@@ -25,6 +25,18 @@ $(document).ready(function() {
     location.assign(nextPage);
   });
 
+  $('#nav-home').click(function() {
+    const url = window.location.search;
+    let userId;
+    if (url.indexOf('?user_id=') !== -1) {
+      userId = url.split('=')[1];
+    }
+    let nextPage = `/home?user_id=${userId}`;
+    location.assign(nextPage);
+  });
+  $('#nav-logout').click(function() {
+    location.assign(`/`);
+  });
   $('#login-trigger').click(function() {
     $('#login-content').slideToggle();
   });

@@ -13,6 +13,9 @@ $(document).ready(function() {
 
   const displayProfile = async queryId => {
     const personalInfo = await getPersonalInfo(queryId);
+    if (personalInfo[0].userImage === null) {
+      personalInfo[0].userImage = '/assets/img/empty-icon.png';
+    }
     $('#js-name').html(
       `Hi ${personalInfo[0].firstName} ${personalInfo[0].lastName}!`
     );

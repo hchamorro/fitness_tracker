@@ -567,7 +567,7 @@ top: 320px;
   z-index:0;
   position: fixed;
   right: 0px;
-  top: 290px;
+  top: 500px;
 
   width: 200px;
   height: 200px;
@@ -585,8 +585,8 @@ top: 320px;
 .circle {
   z-index:0;
   position: fixed;
-  right: 600px;
-  top: 200px;
+  left: 30px;
+  top: 90px;
 
   width: 200px;
   height: 200px;
@@ -594,7 +594,7 @@ top: 320px;
   border-top-right-radius: 100px;
   border-bottom-left-radius:100px;
   border-bottom-right-radius:100px;
-  border: 10px solid yellow;
+  border: 10px solid rgb(45, 4, 158);
   border-bottom: 100;
   
   -webkit-box-sizing: border-box;
@@ -605,7 +605,7 @@ top: 320px;
   z-index:0;
   position: fixed;
   right: 300px;
-  top: 500px;
+  top: 200px;
 
   width: 200px;
   height: 200px;
@@ -613,7 +613,7 @@ top: 320px;
   border-top-right-radius: 10px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
-  border: 10px solid rgb(13, 240, 24);
+  border: 10px solid rgb(235, 22, 188);
   border-bottom: 100;
   
   -webkit-box-sizing: border-box;
@@ -645,13 +645,13 @@ top: 320px;
   border-top-right-radius: 10px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
-  border: 10px solid rgb(224, 240, 10);
+  border: 10px solid rgb(238, 255, 0);
   border-bottom: 100;
 }
 .triangle-left {
   position: fixed;
-  left: 50px;
-  top: 300px;
+  right: 300px;
+  top: 500px;
   width: 0;
   height: 0;
   border-top: 50px solid transparent;

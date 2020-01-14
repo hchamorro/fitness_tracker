@@ -32,7 +32,9 @@ $(document).ready(function() {
     //Convert object into array of key/value pairs
     const scoreboardArray = Object.entries(scoreboard);
     for (const [username, score] of scoreboardArray) {
-      $('#scoreboard').append(`<div> ${username} : ${score} </div>`);
+      // $('#scoreboard').append(`<div> ${username} : ${score} </div>`);
+      $('#names').append(`<div class="scores">${username}</div>`);
+      $('#scores').append(`<div class="scores">${score}</div>`);
     }
   };
 

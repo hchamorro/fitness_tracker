@@ -2,50 +2,6 @@
 
 Socail Media App that allows users to post and share photos of their achievments.
 
-## Build status
-
-view Deployed App : https://fitboardathletic.herokuapp.com/
-
-## Tech/framework used
-
-<b>Built with</b>
-
-- [FROW](https://frowcss.com/)
-
-## Features
-
-Capture, a package allowing access to camera on local device
-
-## Installation
-
-After cloning repo
-
-```
-npm install
-```
-
-```
-npm run
-```
-
-Open browser to localhost
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-MIT © [hchamorro]()
-
-# fitness_tracker
-
-Socail Media App that allows users to post and share photos of their achievments.
-
 ## Motivation
 
 A great way to get users motivated to exercise and challange friends to star fit.
@@ -80,6 +36,8 @@ News Feed:
 Capture- JavaSript allowing access to local camera.
 
 Ex. -
+
+Public Script:
 
 ```
 $(document).ready(function () {
@@ -196,6 +154,8 @@ function camera() {
 }
 ```
 
+View:
+
 ```
  <div class="modal-content">
         <span id="close">&times;</span>
@@ -240,6 +200,8 @@ npm start
 Will be running on localhost.
 
 ## Issues
+
+Create/ Invite Group
 
 Payment Method
 
